@@ -1,0 +1,72 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.hero {
+    background-color: #325a75; /* Adjust blue color */
+    color: #fff; /* Ensure white header text */
+    padding: 20px 0;
+    /*width: 960px;*/
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.hero h1, .hero h2 {
+    margin: 0;
+    color: #fff;
+}
+
+.section {
+    padding: 2rem;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhanced shadow */
+}
+
+.box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhanced shadow */
+}
+.button {
+    background-color: #325a75;
+    color: #fff;
+}
+
+.button:hover {
+    background-color: #2a4760;
+    color: #fff;
+}
+
+footer {
+    background: #325a75;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.table td {
+    vertical-align: top; /* Ensures proper alignment of text and button */
+    padding: 10px; /* Optional spacing */
+}
+
+.table td .has-text-right {
+    margin-top: 5px; /* Adds space between the text and button when wrapping */
+}
