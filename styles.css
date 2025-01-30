@@ -5,11 +5,10 @@ body {
 }
 
 .hero {
-    background-color: #325a75; /* Adjust blue color */
+    background: linear-gradient(135deg, #325a75 0%, #03141d 100%);
     color: #fff; /* Ensure white header text */
     padding: 20px 0;
-    /*width: 960px;*/
-    width: 1300px;
+    width: 65%;
     margin: 0 auto;
 }
 
@@ -69,4 +68,57 @@ footer {
 
 .table td .has-text-right {
     margin-top: 5px; /* Adds space between the text and button when wrapping */
+}
+
+.btn-atras, .btn-principal, .btn-siguiente {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+/* Tamaño personalizado para la foto */
+.custom-photo-size {
+    width: 200px;
+    height: 200px;
+}
+
+/* Asegúrate de que la imagen ocupe todo el espacio del contenedor */
+.custom-photo-size img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
+}
+
+/* Contenedor para la foto y el botón */
+.photo-button-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Estilo para la foto */
+.photo-button-container .custom-photo-size {
+    position: absolute;
+    top: -130px; /* Ajusta la posición vertical de la foto */
+    right: 0; /* Alinea la foto a la derecha */
+    z-index: 1; /* Asegura que la foto esté encima del botón */
+}
+
+/* Estilo para el botón */
+.photo-button-container .button {
+    position: relative;
+    z-index: 2; /* Asegura que el botón esté debajo de la foto */
+    margin-top: 90px; /* Ajusta el espacio para que el botón no se solape con la foto */
+}
+
+.icon {
+    margin-left: 10px; /* Espacio entre el icono y el texto */
+}
+
+.icon i {
+    color: #325a75; /* Color del icono */
+    font-size: 1.2em; /* Tamaño del icono */
 }
