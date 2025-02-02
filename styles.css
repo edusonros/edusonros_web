@@ -24,11 +24,12 @@ body {
 .columns {
     display: flex;
     justify-content: space-between;
+    margin: 0 -10px; /* Ajusta el margen entre columnas */
 }
 
 .column {
     background: #fff;
-    padding: 20px;
+    padding: 0 10px; /* Ajusta el padding interno de las columnas */
     border-radius: 8px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhanced shadow */
 }
@@ -37,6 +38,7 @@ body {
     background: #fff;
     padding: 20px;
     border-radius: 8px;
+    margin-bottom: 20px; /* Espacio entre las cajas */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhanced shadow */
 }
 .button {
@@ -122,3 +124,23 @@ footer {
     color: #325a75; /* Color del icono */
     font-size: 1.2em; /* Tamaño del icono */
 }
+
+/* Estilos para la sección de habilidades */
+.skills {
+    margin-top: 10px;
+}
+
+.skill {
+    margin-bottom: 15px;
+}
+
+.skill p {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.progress {
+    height: 12px; /* Altura de la barra de progreso */
+    border-radius: 6px; /* Bordes redondeados */
+}
+
