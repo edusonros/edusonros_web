@@ -14,7 +14,7 @@ body {
 
 @media (min-width: 768px) {
     .hero {
-        width: 65%; /* Ancho reducido en pantallas grandes */
+        width: 85%; 
     }
 }
 
