@@ -8,8 +8,14 @@ body {
     background: linear-gradient(135deg, #325a75 0%, #03141d 100%);
     color: #fff; /* Ensure white header text */
     padding: 20px 0;
-    width: 65%;
+    width: 100%;
     margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        width: 65%; /* Ancho reducido en pantallas grandes */
+    }
 }
 
 .hero h1, .hero h2 {
@@ -55,12 +61,17 @@ footer {
     background: #325a75;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px 20px; /* Añade padding a los lados */
     margin-top: 20px;
+    width: 100%; /* Ocupa el 100% del ancho */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
+
 .container {
-    width: 960px;
+    width: 100%; /* Ocupa el 100% del ancho en móviles */
+    max-width: 960px; /* Limita el ancho máximo en pantallas grandes */
     margin: 0 auto;
+    padding: 0 20px; /* Añade un poco de padding para que el contenido no toque los bordes */
 }
 
 .table td {
