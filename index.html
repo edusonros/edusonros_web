@@ -28,7 +28,7 @@
       body {
         font-family: "Roboto", sans-serif;
         /*background-color: #f4f4f4; */
-        background-image: "/Plano imagen fondo.jpg"; /* Replace with your image file name */
+        background-image: url("Plano%20imagen%20fondo.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -38,7 +38,7 @@
   </head>
   <body>
     <header class="hero">
-      <div class="hero-body">
+      <section class="hero-body">
         <div class="container">
           <h1 class="title is-2 has-text-left">Eduardo Sonsona Rosinach</h1>
           <h2 class="subtitle has-text-left">
@@ -57,13 +57,15 @@
                 />
               </figure>
               <!-- Botón "Contáctame" -->
-              <a class="button is-light is-medium" href="#edusonros@gmail.com"
+              <a
+                class="button is-light is-medium has-text-right"
+                href="mailto:edusonros@gmail.com"
                 >Contáctame</a
               >
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </header>
 
     <main class="section">
@@ -193,8 +195,8 @@
           </div>
           <!-- Columna Central -->
           <div class="column is-one-third">
-            <h3 class="title is-4">
-              Experiencia Laboral<span class="icon">
+            <h3 class="title is-4" padding="15px">
+              <br />Experiencia Laboral<span class="icon">
                 <i class="fas fa-briefcase"></i>
               </span>
             </h3>

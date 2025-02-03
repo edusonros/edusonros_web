@@ -1,20 +1,18 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
 .hero {
     background: linear-gradient(135deg, #325a75 0%, #03141d 100%);
     color: #fff; /* Ensure white header text */
     padding: 20px 0;
-    width: 100%;
     margin: 0 auto;
+    width: 1350px;
+
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .hero {
-        width: 85%; 
+        width:768px;
+    }
+    .columns {
+    width: 100%; /* Ocupar todo el ancho en móviles */
     }
 }
 
@@ -63,13 +61,11 @@ footer {
     text-align: center;
     padding: 10px 20px; /* Añade padding a los lados */
     margin-top: 20px;
-    width: 100%; /* Ocupa el 100% del ancho */
     box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
 
 .container {
-    width: 100%; /* Ocupa el 100% del ancho en móviles */
-    max-width: 960px; /* Limita el ancho máximo en pantallas grandes */
+    max-width: 1200px; /* Limita el ancho máximo en pantallas grandes */
     margin: 0 auto;
     padding: 0 20px; /* Añade un poco de padding para que el contenido no toque los bordes */
 }
@@ -108,7 +104,7 @@ footer {
 
 /* Contenedor para la foto y el botón */
 .photo-button-container {
-    position: relative;
+    position: static;
     display: inline-block;
 }
 
@@ -155,3 +151,26 @@ footer {
     border-radius: 6px; /* Bordes redondeados */
 }
 
+
+.photo-button-container {
+    position: relative;
+    display: inline-block;
+    width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho */
+}
+
+.photo-button-container {
+    align-items: stretch right; /* Centra la imagen y el botón */
+}
+
+.custom-photo-size img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer p {
+    margin: 0; /* Elimina el margen predeterminado */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    overflow: hidden; /* Oculta el texto que se desborda */
+    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
+}
