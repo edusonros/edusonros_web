@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curriculum Vitae - Eduardo Sonsona - Alot Metal</title>
+
+    <!-- Bulma CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <!-- My Styles -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background-image: url("Plano imagen fondo.jpg"); /* Replace with your image file name */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #333;
+      }
+
+      /* Add spacing between the navigation buttons and the previous section */
+      .button-navigation {
+        margin-top: 2rem; /* Adds space above the navigation buttons */
+        margin-bottom: 2rem; /* Adds space below the navigation buttons */
+        text-align: right; /* Aligns buttons to the right */
+      }
+
+      .button-navigation .buttons {
+        display: inline-flex;
+        gap: 10px; /* Space between buttons */
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-body">
+        <h1 class="title is-2 has-text-lefted">Eduardo Sonsona Rosinach</h1>
+        <h2 class="subtitle has-text-lefted">Ingeniero Técnico Industrial</h2>
+      </div>
+    </header>
+    <main class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-full">
+            <div class="box">
+              <table class="table is-fullwidth">
+                <tr>
+                  <td>
+                    <h3 class="title is-4">
+                      Diseño y Cálculo de Estructuras según EN 1993
+                    </h3>
+                  </td>
+                  <td>
+                    <br />
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="has-text-justified">
+                    <p>
+                      <br />El cálculo estructural es clave para garantizar la
+                      seguridad y eficiencia de cualquier construcción en acero.
+                      Gracias a mi formación en Diseño y Cálculo de Estructuras
+                      según EN 1993, domino la aplicación de la normativa
+                      europea para diseñar estructuras resistentes, optimizadas
+                      y seguras. <br /><br />Competencias adquiridas:<br />✔
+                      Análisis estructural avanzado: Evaluación de cargas,
+                      combinaciones y estados límite. <br />✔ Diseño de
+                      secciones y elementos estructurales: Cálculo de vigas,
+                      columnas y otros elementos bajo diferentes esfuerzos.
+                      <br />✔ Uniones en estructuras de acero: Aplicación de
+                      métodos de conexión eficientes y normativos. <br />✔
+                      Ejecución y control de calidad: Aseguramiento de la
+                      correcta fabricación y montaje estructural.
+                      <br /><br />Con esta especialización, estoy capacitado
+                      para diseñar y optimizar estructuras metálicas cumpliendo
+                      con los estándares europeos más exigentes.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="button-navigation">
+        <div class="buttons">
+          <button class="button is-link">Atrás</button>
+          <button class="button is-link">Página Principal</button>
+          <button class="button is-link">Siguiente</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Eduardo Sonsona Rosinach - Curriculum Vitae</p>
+    </footer>
+
+    <script>
+      // Button navigation logic
+      const buttons = document.querySelectorAll(".button");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          if (button.textContent === "Atrás") {
+            window.history.back();
+          } else if (button.textContent === "Página Principal") {
+            window.location.href = "index.html";
+          } else if (button.textContent === "Siguiente") {
+            window.location.href = "pagina-siguiente.html";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
