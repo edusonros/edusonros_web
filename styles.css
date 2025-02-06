@@ -101,8 +101,8 @@ footer {
 
 /* Tamaño personalizado para la foto */
 .custom-photo-size {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
 }
 
 /* Asegúrate de que la imagen ocupe todo el espacio del contenedor */
@@ -121,7 +121,7 @@ footer {
 /* Estilo para la foto */
 .photo-button-container .custom-photo-size {
   position: absolute;
-  top: -130px; /* Ajusta la posición vertical de la foto */
+  top: -180px; /* Ajusta la posición vertical de la foto */
   right: 0; /* Alinea la foto a la derecha */
   z-index: 1; /* Asegura que la foto esté encima del botón */
 }

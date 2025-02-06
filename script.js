@@ -27,3 +27,26 @@ updateProgressBar("bulmaProgress", 80);
 updateProgressBar("androidProgress", 60);
 updateProgressBar("chatgptProgress", 70);
 updateProgressBar("teklaProgress", 50);
+
+
+// navigation.js
+function setupButtonNavigation() {
+    const buttons = document.querySelectorAll(".button");
+  
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        if (button.textContent === "Atrás") {
+          window.history.back();
+        } else if (button.textContent === "Página Principal") {
+          window.location.href = "./index.html";
+        } else if (button.textContent === "Siguiente") {
+          window.location.href = "./pagina-siguiente.html";
+        }
+      });
+    });
+  }
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    setupButtonNavigation();
+  });
+  
