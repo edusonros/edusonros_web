@@ -1,4 +1,6 @@
 // script.js
+
+// Logica  de la funcion de las barra de habilidades
 function updateProgressBar(progressBarId, targetValue) {
   var progressBar = document.getElementById(progressBarId);
   var currentValue = 0;
@@ -29,7 +31,7 @@ updateProgressBar("chatgptProgress", 70);
 updateProgressBar("teklaProgress", 50);
 
 
-// navigation.js
+// Función para configurar la navegación de los botones
 function setupButtonNavigation() {
     const buttons = document.querySelectorAll(".button");
   
@@ -38,15 +40,17 @@ function setupButtonNavigation() {
         if (button.textContent === "Atrás") {
           window.history.back();
         } else if (button.textContent === "Página Principal") {
-          window.location.href = "./index.html";
+          window.location.href = "/index.html";
         } else if (button.textContent === "Siguiente") {
-          window.location.href = "./pagina-siguiente.html";
+          window.location.href = "/pagina-siguiente.html";
         }
       });
     });
   }
   
+  // Llamar a las funciones cuando el DOM esté listo
   document.addEventListener("DOMContentLoaded", () => {
-    setupButtonNavigation();
+    setupButtonNavigation(); // Configura la navegación de los botones
   });
+  
   
