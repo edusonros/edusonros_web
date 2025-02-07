@@ -125,7 +125,36 @@ function navegarSiguiente() {
   }
 }  
   
+document.addEventListener('DOMContentLoaded', function() {
+  const skillsBox = document.querySelector('.skills');
+  const progressBars = document.querySelectorAll('.progress-bar');
 
-  
-  
-  
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function handleScroll() {
+    if (isElementInViewport(skillsBox)) {
+      progressBars.forEach(bar => {
+        const value = bar.getAttribute('value');
+        bar.style.width = value + '%'; // Simula el llenado con una transición CSS
+      });
+      window.removeEventListener('scroll', handleScroll); // Desactiva el listener una vez ejecutado
+    }
+  }
+
+  // Inicializa las barras a 0%
+  progressBars.forEach(bar => {
+    bar.style.width = '0%';
+    bar.style.transition = 'width 1s ease-in-out'; // Añade una transición suave
+  });
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // Comprueba al cargar la página por si la sección ya es visible
+});
