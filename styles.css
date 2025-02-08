@@ -68,11 +68,15 @@ footer {
 @media (max-width: 768px) {
   footer {
     width: 100%; /* Asegura que el footer ocupe el 100% del ancho en móviles */
+    max-width: none !important; /* Elimina el ancho máximo en móviles */
+    padding: 0 10px !important; /* Ajusta el padding para móviles */
     flex-shrink: 0; /* Evita que el footer se achique */
   }
   .container {
-    max-width: none; /* Elimina el ancho máximo en móviles */
-    padding: 0 10px; /* Ajusta el padding para móviles */
+    width: 100%; /* Asegura que el footer ocupe el 100% del ancho en móviles */
+    max-width: none !important; /* Elimina el ancho máximo en móviles */
+    padding: 0 10px !important; /* Ajusta el padding para móviles */
+    flex-shrink: 0; /* Evita que el footer se achique */
   }
 }
 
