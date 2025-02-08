@@ -32,8 +32,8 @@ body {
 }
 
 .columns {
-  display: flex;
-  flex-wrap: wrap; /* Permite que las columnas se apilen en móviles */
+  display: none;
+  flex-wrap: nowrap; /* Permite que las columnas se apilen en móviles */
   justify-content: space-between;
   margin: 0 -10px; /* Ajusta el margen entre columnas */
 }
@@ -43,8 +43,8 @@ body {
   padding: 0 10px;
   border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-  flex: 1 1 100%; /* Ocupa el 100% del ancho en móviles */
-  margin-bottom: 20px; /* Espacio entre columnas */
+  /*flex: 1 1 100%; /* Ocupa el 100% del ancho en móviles */
+  /*margin-bottom: 20px; /* Espacio entre columnas */
 }
 
 .box {
@@ -73,16 +73,15 @@ footer {
     padding: 20px 10px; /* Ajusta el padding para móviles */
   }
 
-  .columns {
-    /*    flex-direction: column; /* Apila las columnas en móviles */*/
-    width: 100%; /* Ocupar todo el ancho en móviles */
+  /*.columns { */
+  /*    flex-direction: column; /* Apila las columnas en móviles */
+  /*width: 100%; /* Ocupar todo el ancho en móviles */
+  /*}*/
 
-}
-
-  .column {
-    flex: 1 1 100%; /* Ocupa el 100% del ancho en móviles */
-    margin-bottom: 20px; /* Espacio entre columnas */
-  }
+  /*.column {  */
+  /*flex: 1 1 100%; /* Ocupa el 100% del ancho en móviles */
+  /*margin-bottom: 20px; /* Espacio entre columnas */
+  /*}*/
 
   footer {
     padding: 20px 10px; /* Ajusta el padding para móviles */
