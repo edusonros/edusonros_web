@@ -158,3 +158,17 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', handleScroll);
   handleScroll(); // Comprueba al cargar la página por si la sección ya es visible
 });
+
+// Función para ajustar el zoom de la página
+function adjustZoom() {
+  const screenWidth = window.innerWidth; // Ancho de la pantalla
+  const totalColumnsWidth = 2304; // Ancho total de las 3 columnas (768px * 3)
+  const zoomLevel = screenWidth / totalColumnsWidth; // Calcula el nivel de zoom necesario
+
+  // Aplica el zoom a la página
+  document.body.style.zoom = zoomLevel;
+}
+
+// Ajusta el zoom al cargar la página y al cambiar el tamaño de la ventana
+window.addEventListener("load", adjustZoom);
+window.addEventListener("resize", adjustZoom);
