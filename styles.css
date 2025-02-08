@@ -47,13 +47,6 @@ body {
   margin-bottom: 20px; /* Espacio entre columnas */
 }
 
-@media (min-width: 768px) {
-  .column {
-    flex-basis: calc(33.333% - 20px); /* Tres columnas en pantallas grandes */
-    margin: 0; /* Elimina el margen entre columnas */
-  }
-}
-
 .box {
   background: #fff;
   padding: 20px;
@@ -76,12 +69,15 @@ footer {
 /* Estilos para móviles */
 @media (max-width: 768px) {
   .hero {
+    width: 100%;
     padding: 20px 10px; /* Ajusta el padding para móviles */
   }
 
   .columns {
-    flex-direction: column; /* Apila las columnas en móviles */
-  }
+    /*    flex-direction: column; /* Apila las columnas en móviles */*/
+    width: 100%; /* Ocupar todo el ancho en móviles */
+
+}
 
   .column {
     flex: 1 1 100%; /* Ocupa el 100% del ancho en móviles */
