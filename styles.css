@@ -70,6 +70,10 @@ footer {
     width: 100%; /* Asegura que el footer ocupe el 100% del ancho en móviles */
     flex-shrink: 0; /* Evita que el footer se achique */
   }
+  .container {
+    max-width: none; /* Elimina el ancho máximo en móviles */
+    padding: 0 10px; /* Ajusta el padding para móviles */
+  }
 }
 
 .container {
