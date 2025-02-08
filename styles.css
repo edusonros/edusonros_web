@@ -74,14 +74,19 @@ footer {
   }
 
   .columns {
-    flex-direction: column; /* Apila las columnas en móviles */
-    width: 100%; /* Ocupar todo el ancho en móviles */
+    display: flex; /* Asegura que las columnas se muestren en línea */
+    flex-wrap: nowrap; /* Evita que las columnas se apilen */
+    justify-content: space-between; /* Distribuye el espacio entre las columnas */
+    overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
+    margin: 0 -10px; /* Ajusta el margen entre columnas */
   }
 
-  /*.column {  */
-  /*flex: 1 1 100%; /* Ocupa el 100% del ancho en móviles */
-  /*margin-bottom: 20px; /* Espacio entre columnas */
-  /*}*/
+  .column {
+    flex: 1; /* Cada columna ocupa un espacio igual */
+    min-width: 30%; /* Ancho mínimo para cada columna */
+    margin: 0 10px; /* Espacio entre columnas */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  }
 
   footer {
     padding: 20px 10px; /* Ajusta el padding para móviles */
