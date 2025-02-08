@@ -3,12 +3,12 @@
   color: #fff; /* Ensure white header text */
   padding: 20px 0;
   margin: 0 auto;
-  width: 100%; /* Cambia el ancho fijo a 100% */
+  width: 1350px;
 }
 
 @media (max-width: 768px) {
   .hero {
-    width: 100%; /* Asegura que el header ocupe el 100% del ancho en móviles */
+    width: 768px;
   }
   .columns {
     width: 100%; /* Ocupar todo el ancho en móviles */
@@ -60,14 +60,14 @@ footer {
   color: #fff;
   padding: 20px 0;
   margin: 0 auto;
-  width: 100%; /* Cambia el ancho fijo a 100% */
+  width: 1350px;
   text-align: center;
 }
 
 /* Ajustes para móviles */
 @media (max-width: 768px) {
   footer {
-    width: 100%; /* Asegura que el footer ocupe el 100% del ancho en móviles */
+    width: 768px;
     flex-shrink: 0; /* Evita que el footer se achique */
   }
 }
@@ -109,14 +109,13 @@ footer {
 .custom-photo-size img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
 }
 
 /* Contenedor para la foto y el botón */
 .photo-button-container {
-  position: relative;
+  position: static;
   display: inline-block;
-  width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho */
 }
 
 /* Estilo para la foto */
@@ -193,6 +192,27 @@ footer p {
 }
 
 /* styles.css */
+progress {
+  width: 100%;
+  height: 20px;
+  appearance: none; /* Elimina el estilo por defecto del navegador */
+}
+
+progress::-webkit-progress-bar {
+  background-color: #f3f3f3;
+  border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+  background-color: #4caf50;
+  border-radius: 10px;
+}
+
+progress::-moz-progress-bar {
+  background-color: #4caf50;
+  border-radius: 10px;
+}
+
 progress {
   width: 0%; /* Inicializa el ancho a 0 */
   height: 20px;
