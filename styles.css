@@ -49,7 +49,8 @@ body {
 
 @media (min-width: 768px) {
   .column {
-    flex: 1 1 calc(33.333% - 20px); /* Tres columnas en pantallas grandes */
+    flex-basis: calc(33.333% - 20px); /* Tres columnas en pantallas grandes */
+    margin: 0; /* Elimina el margen entre columnas */
   }
 }
 
@@ -69,6 +70,7 @@ footer {
   width: 100%; /* Ocupa el 100% del ancho */
   text-align: center;
   box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  margin: 20px auto; /* Ajusta el margen del header */
 }
 
 /* Estilos para móviles */
