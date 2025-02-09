@@ -11,7 +11,7 @@
     width: 100%;
   }
   .columns {
-    width: 100%; /* Ocupar todo el ancho en móviles */
+    width: 33%; /* Ocupar todo el ancho en móviles */
   }
 }
 
