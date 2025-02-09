@@ -69,7 +69,7 @@ footer {
 /* Estilos para móviles */
 @media (max-width: 2304px) {
   .hero {
-    width: max-content; /*100%;*/
+    width: /*max-content;*/ 100%;
     padding: 20px 10px; /* Ajusta el padding para móviles */
   }
 
