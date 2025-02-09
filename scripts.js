@@ -24,14 +24,18 @@ function updateProgressBar(progressBarId, targetValue) {
 updateProgressBar("autocadProgress", 100);
 updateProgressBar("solidworksProgress", 90);
 updateProgressBar("autodeskProgress", 60);
+updateProgressBar("teklakProgress", 50);
+updateProgressBar("cypeProgress", 90);
 updateProgressBar("lantekProgress", 90);
-updateProgressBar("cypeProgress", 65);
-updateProgressBar("excelProgress", 80);
-updateProgressBar("pythonProgress", 60);
+updateProgressBar("telematicaProgress", 90);
+updateProgressBar("webProgress", 65);
 updateProgressBar("htmlProgress", 90);
 updateProgressBar("cssProgress", 85);
 updateProgressBar("javascriptProgress", 70);
 updateProgressBar("bulmaProgress", 80);
+updateProgressBar("wordProgress", 65);
+updateProgressBar("excelProgress", 80);
+updateProgressBar("pythonProgress", 60);
 updateProgressBar("androidProgress", 60);
 updateProgressBar("chatgptProgress", 70);
 updateProgressBar("teklaProgress", 50);
@@ -51,24 +55,26 @@ const empresas = [
 
 const cursos = [
   "AutoCAD.html",
-  "ExcelVBA.html",
+  "SolidWorks.html",
+  "inventor.html",
+  "Tekla.html",  
+  "EN1993.html",
+  "CYPE.html",
+  "Lantek.html",
+  "Telematica.html",
+  "web_SQL.html",
   "Word.html",
+  "ExcelVBA.html",
+  "DOS.html",
   "Soldadura.html",
   "BT.html",
   "AT.html",
-  "EN1993.html",
-  "CYPE.html",
-  "Tekla.html",
-  "Perito.html",
-  "Riesgos.html",
   "Robots.html",
   "Siemens.html",
+  "Riesgos.html",
+  "Riesgos_2.html",
+  "Perito.html",
   "Conservacion.html",
-  "inventor.html",
-  "Lantek.html",
-  "SolidWorks.html",
-  "Telematica.html",
-  "web_SQL.html"
 ];
 
 // Obtener el nombre de la página actual
