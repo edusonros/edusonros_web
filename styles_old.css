@@ -6,9 +6,9 @@
   width: 1350px;
 }
 
-@media (max-width: 2034px) {
+@media (max-width: 1152px) {
   .hero {
-    width: 100%;
+    width: max-content;
   }
   .columns {
     width: 33%; /* Ocupar todo el ancho en móviles */
