@@ -26,11 +26,6 @@ body {
   color: #fff;
 }
 
-/* Main content */
-.section {
-  padding: 2rem;
-}
-
 .columns {
   display: none;
   flex-wrap: nowrap; /* Permite que las columnas se apilen en móviles */
@@ -43,8 +38,15 @@ body {
   padding: 0 10px;
   border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-  /*flex: 1 1 100%; /* Ocupa el 100% del ancho en móviles */
+  flex: 1 1 100%; /* Ocupa el 100% del ancho en móviles */
   /*margin-bottom: 20px; /* Espacio entre columnas */
+}
+
+.container {
+  max-width: 1200px; /* Limita el ancho máximo en pantallas grandes */
+  margin: 0 auto;
+  padding: 10 20px;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
 }
 
 .box {
@@ -101,13 +103,6 @@ footer {
 .button:hover {
   background-color: #2a4760;
   color: #fff;
-}
-
-.container {
-  max-width: 1200px; /* Limita el ancho máximo en pantallas grandes */
-  margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
 }
 
 .table td {
