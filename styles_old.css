@@ -6,12 +6,12 @@
   width: 1350px;
 }
 
-@media (max-width: 1152px) {
+@media (max-width: 768px) {
   .hero {
-    width: max-content;
+    width: 768px;
   }
   .columns {
-    width: 33%; /* Ocupar todo el ancho en móviles */
+    width: 100%; /* Ocupar todo el ancho en móviles */
   }
 }
 
