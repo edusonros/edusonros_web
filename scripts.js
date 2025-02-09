@@ -178,3 +178,9 @@ function adjustZoom() {
 // Ajusta el zoom al cargar la página y al cambiar el tamaño de la ventana
 window.addEventListener("load", adjustZoom);
 window.addEventListener("resize", adjustZoom);
+
+window.addEventListener("load", function () {
+  const container = document.getElementById("main-container");
+  container.style.transform = "scale(1)";
+  container.style.transformOrigin = "top left";
+});
