@@ -1,5 +1,5 @@
 /* Estilos generales */
-.body {
+body {
   font-family: "Roboto", sans-serif;
   background-image: url("../images/Plano_imagen_fondo.jpg");
   background-size: cover;
@@ -28,8 +28,8 @@
 }
 
 .section {
-  width: 100%;
-  padding: 2rem;
+  /*width: 100%;*/
+  /*padding: 2rem;*/
 }
 
 .columns {
@@ -74,7 +74,7 @@ footer {
 }
 
 /* Estilos para móviles */
-@media (max-width: 2304px) {
+@media (max-width: 1400px) {
   body {
     overflow-x: auto;
   }
@@ -93,17 +93,17 @@ footer {
   .columns {
     display: flex; /* Asegura que las columnas se muestren en línea */
     flex-wrap: nowrap; /* Evita que las columnas se apilen */
-    justify-content: flex-start; /* Alinea las columnas al inicio */
-    width: none; /* Ancho total de las 3 columnas (768px * 3) */
-    transform-origin: top left; /* Establece el punto de origen para el zoom */
+    /*justify-content: flex-start; /* Alinea las columnas al inicio */
+    /*width: none; /* Ancho total de las 3 columnas (768px * 3) */
+    /*transform-origin: top left; /* Establece el punto de origen para el zoom */
     overflow-x: auto;
   }
 
   .column {
-    min-width: 300px;
-    /*width: 768px; /* Ancho fijo para cada columna */
-    margin-right: 0; /* Elimina el margen entre columnas */
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    /*min-width: 300px;*/
+    width: 768px; /* Ancho fijo para cada columna */
+    /*margin-right: 0; /* Elimina el margen entre columnas */
+    /*box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
   }
 
   footer {
