@@ -78,7 +78,7 @@ const cursos = [
 ];
 
 // Obtener el nombre de la página actual
-const paginaActual = window.location.pathname.split("/").pop();
+const paginaActual = window.location.pathname.split("../").pop();
 
 // Determinar si estamos en una página de empresa o de curso
 let listaPaginas;
@@ -98,7 +98,7 @@ buttons.forEach((button) => {
       if (button.textContent === "Atrás") {
           window.history.back();
       } else if (button.textContent === "Página Principal") {
-          window.location.href = "/index.html";
+          window.location.href = "../index.html";
       } else if (button.textContent === "Siguiente") {
           navegarSiguiente();
       }
@@ -114,7 +114,7 @@ console.log("Índice actual:", listaPaginas.indexOf(paginaActual));
 function navegarSiguiente() {
   if (listaPaginas.length === 0) {
       // Si no es una página de empresa ni de curso, redirigir a la página principal
-      window.location.href = "/index.html";
+      window.location.href = "../index.html";
       return;
   }
 
@@ -123,7 +123,7 @@ function navegarSiguiente() {
 
   if (indiceActual === -1 || indiceActual === listaPaginas.length - 1) {
       // Si es la última página, redirigir a la página principal
-      window.location.href = "/index.html";
+      window.location.href = "../index.html";
   } else {
       // Navegar a la siguiente página
       const siguientePagina = listaPaginas[indiceActual + 1];
@@ -174,13 +174,3 @@ function adjustZoom() {
   // Aplica el zoom a la página
   document.body.style.zoom = zoomLevel;
 }
-
-// Ajusta el zoom al cargar la página y al cambiar el tamaño de la ventana
-window.addEventListener("load", adjustZoom);
-window.addEventListener("resize", adjustZoom);
-
-window.addEventListener("load", function () {
-  const container = document.getElementById("main-container");
-  container.style.transform = "scale(1)";
-  container.style.transformOrigin = "top left";
-});

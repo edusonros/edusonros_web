@@ -43,7 +43,7 @@ body {
 }
 
 .container {
-  max-width: 1200px; /* Limita el ancho máximo en pantallas grandes */
+  max-width: none; /* Limita el ancho máximo en pantallas grandes */
   margin: 0 auto;
   padding: 10 20px;
   box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
