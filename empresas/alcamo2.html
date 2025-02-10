@@ -28,16 +28,18 @@
         color: #333;
       }
 
-      /* Add spacing between the navigation buttons and the previous section */
+      /* Ajuste de navegación */
       .button-navigation {
-        margin-top: 2rem; /* Adds space above the navigation buttons */
-        margin-bottom: 2rem; /* Adds space below the navigation buttons */
-        text-align: right; /* Aligns buttons to the right */
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
       }
 
       .button-navigation .buttons {
-        display: inline-flex;
-        gap: 10px; /* Space between buttons */
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
       }
     </style>
   </head>
@@ -60,9 +62,12 @@
                     <h3 class="title is-4">Experiencia en ARASAF</h3>
                     <p>Categoria <strong>Ingeniero</strong><br /></p>
                   </td>
-                  <td>
-                    <figure class="images/image is-128x128">
-                      <img src="" alt="alcamo" />
+                  <td class="experience-image">
+                    <figure>
+                      <img
+                        src=""
+                        alt="Imagen relacionada con la experiencia en ARASAF"
+                      />
                     </figure>
                   </td>
                 </tr>
@@ -77,7 +82,7 @@
                       encargado de realizarlo, diálogos con los mismos y con los
                       encargados de obra. Todos los planos de piezas los realizo
                       con AutoCAD. El control con Excel. Los presupuestos con
-                      Word
+                      Word.
                     </p>
                   </td>
                 </tr>
@@ -97,7 +102,7 @@
       </div>
     </main>
 
-    <footer>
+    <footer class="section has-text-centered">
       <p>&copy; 2024 Eduardo Sonsona Rosinach - Curriculum Vitae</p>
     </footer>
 
