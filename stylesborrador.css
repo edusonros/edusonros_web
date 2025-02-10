@@ -1,0 +1,196 @@
+/* Estilos generales */
+body {
+  font-family: "Roboto", sans-serif;
+  background-image: url("images/Plano_imagen_fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.hero {
+  background: linear-gradient(135deg, #325a75 0%, #03141d 100%);
+  color: #fff;
+  padding: 20px 0;
+  width: 100%; /* Ocupa el 100% del ancho */
+  margin: 0 auto;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+}
+
+.hero h1,
+.hero h2 {
+  margin: 0;
+  color: #fff;
+}
+
+.columns {
+  display: none;
+  flex-wrap: nowrap; /* Permite que las columnas se apilen en móviles */
+  justify-content: space-between;
+  margin: 0 -10px; /* Ajusta el margen entre columnas */
+}
+
+.column {
+  background: #fff;
+  padding: 0 10px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  flex: 1 1 100%; /* Ocupa el 100% del ancho en móviles */
+  /*margin-bottom: 20px; /* Espacio entre columnas */
+}
+
+.container {
+  max-width: none; /* Limita el ancho máximo en pantallas grandes */
+  margin: 0 auto;
+  padding: 10 20px;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+}
+
+.box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Footer */
+footer {
+  background: #325a75;
+  color: #fff;
+  padding: 20px 0;
+  width: 100%; /* Ocupa el 100% del ancho */
+  text-align: center;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  margin: 20px auto; /* Ajusta el margen del header */
+}
+
+/* Estilos para móviles */
+@media (max-width: 2304px) {
+  .hero {
+    max-width: none;
+    padding: 10px 10px; /* Ajusta el padding para móviles */
+  }
+
+  .columns {
+    display: flex; /* Asegura que las columnas se muestren en línea */
+    flex-wrap: nowrap; /* Evita que las columnas se apilen */
+    justify-content: flex-start; /* Alinea las columnas al inicio */
+    width: 768px; /* Ancho total de las 3 columnas (768px * 3) */
+    transform-origin: top left; /* Establece el punto de origen para el zoom */
+  }
+
+  .column {
+    width: 768px; /* Ancho fijo para cada columna */
+    margin-right: 0; /* Elimina el margen entre columnas */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  }
+
+  footer {
+    padding: 20px 10px; /* Ajusta el padding para móviles */
+  }
+}
+
+/* Estilos adicionales */
+.button {
+  background-color: #325a75;
+  color: #fff;
+}
+
+.button:hover {
+  background-color: #2a4760;
+  color: #fff;
+}
+
+.table td {
+  vertical-align: top;
+  padding: 10px;
+}
+
+.table td .has-text-right {
+  margin-top: 5px;
+}
+
+/* Estilos para la sección de habilidades */
+.skills {
+  margin-top: 10px;
+}
+
+.skill {
+  margin-bottom: 15px;
+}
+
+.skill p {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.progress {
+  height: 12px;
+  border-radius: 6px;
+}
+
+/* Estilos para la foto y el botón */
+.photo-button-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.photo-button-container .custom-photo-size {
+  position: absolute;
+  top: -180px;
+  width: 250px;
+  height: 250px;
+  right: 0;
+  z-index: 1;
+}
+
+.photo-button-container .button {
+  position: relative;
+  z-index: 2;
+  margin-top: 90px;
+}
+
+.icon {
+  margin-left: 10px;
+}
+
+.icon i {
+  color: #325a75;
+  font-size: 1.2em;
+}
+
+/* Estilos para las barras de progreso */
+progress {
+  width: 100%; /* Ocupa el 100% del ancho */
+  height: 20px;
+  appearance: none;
+  transition: width 1s ease-in-out;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #f3f3f3;
+  border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+  background-color: #4caf50;
+  border-radius: 10px;
+}
+
+progress::-moz-progress-bar {
+  background-color: #4caf50;
+  border-radius: 10px;
+}
+
+.button-navigation {
+  display: flex; /* Activa Flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  margin-top: 2rem; /* Espacio superior */
+  margin-bottom: 2rem; /* Espacio inferior */
+}
