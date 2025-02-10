@@ -1,18 +1,23 @@
-.hero {
-  background: linear-gradient(135deg, #325a75 0%, #03141d 100%);
-  color: #fff; /* Ensure white header text */
-  padding: 20px 0;
-  margin: 0 auto;
-  width: 1350px;
+/* Estilos generales */
+body {
+  font-family: "Roboto", sans-serif;
+  background-image: url("images/Plano_imagen_fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-@media (max-width: 768px) {
-  .hero {
-    width: 768px;
-  }
-  .columns {
-    width: 100%; /* Ocupar todo el ancho en móviles */
-  }
+/* Header */
+.hero {
+  background: linear-gradient(135deg, #325a75 0%, #03141d 100%);
+  color: #fff;
+  padding: 20px 0;
+  width: 100%; /* Ocupa el 100% del ancho */
+  margin: 0 auto;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
 }
 
 .hero h1,
@@ -21,31 +26,75 @@
   color: #fff;
 }
 
-.section {
-  width: none;
-  padding: 2rem;
-}
-
 .columns {
-  display: flex;
+  display: none;
+  flex-wrap: nowrap; /* Permite que las columnas se apilen en móviles */
   justify-content: space-between;
   margin: 0 -10px; /* Ajusta el margen entre columnas */
 }
 
 .column {
   background: #fff;
-  padding: 0 10px; /* Ajusta el padding interno de las columnas */
+  padding: 0 10px;
   border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhanced shadow */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  flex: 1 1 100%; /* Ocupa el 100% del ancho en móviles */
+  /*margin-bottom: 20px; /* Espacio entre columnas */
+}
+
+.container {
+  max-width: none; /* Limita el ancho máximo en pantallas grandes */
+  margin: 0 auto;
+  padding: 10 20px;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
 }
 
 .box {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
-  margin-bottom: 20px; /* Espacio entre las cajas */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhanced shadow */
+  margin-bottom: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
 }
+
+/* Footer */
+footer {
+  background: #325a75;
+  color: #fff;
+  padding: 20px 0;
+  width: 100%; /* Ocupa el 100% del ancho */
+  text-align: center;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  margin: 20px auto; /* Ajusta el margen del header */
+}
+
+/* Estilos para móviles */
+@media (max-width: 2304px) {
+  .hero {
+    max-width: none;
+    padding: 10px 10px; /* Ajusta el padding para móviles */
+  }
+
+  .columns {
+    display: flex; /* Asegura que las columnas se muestren en línea */
+    flex-wrap: nowrap; /* Evita que las columnas se apilen */
+    justify-content: flex-start; /* Alinea las columnas al inicio */
+    width: 768px; /* Ancho total de las 3 columnas (768px * 3) */
+    transform-origin: top left; /* Establece el punto de origen para el zoom */
+  }
+
+  .column {
+    width: 768px; /* Ancho fijo para cada columna */
+    margin-right: 0; /* Elimina el margen entre columnas */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  }
+
+  footer {
+    padding: 20px 10px; /* Ajusta el padding para móviles */
+  }
+}
+
+/* Estilos adicionales */
 .button {
   background-color: #325a75;
   color: #fff;
@@ -56,91 +105,13 @@
   color: #fff;
 }
 
-footer {
-  background: #325a75;
-  color: #fff;
-  padding: 20px 0;
-  margin: 0 auto;
-  width: 1350px;
-  text-align: center;
-}
-
-/* Ajustes para móviles */
-@media (max-width: 768px) {
-  footer {
-    width: 768px;
-    flex-shrink: 0; /* Evita que el footer se achique */
-  }
-}
-
-.container {
-  max-width: 1200px; /* Limita el ancho máximo en pantallas grandes */
-  margin: 0 auto;
-  padding: 0 20px; /* Añade un poco de padding para que el contenido no toque los bordes */
-}
-
 .table td {
-  vertical-align: top; /* Ensures proper alignment of text and button */
-  padding: 10px; /* Optional spacing */
+  vertical-align: top;
+  padding: 10px;
 }
 
 .table td .has-text-right {
-  margin-top: 5px; /* Adds space between the text and button when wrapping */
-}
-
-.btn-atras,
-.btn-principal,
-.btn-siguiente {
-  background-color: #4caf50; /* Verde */
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-
-/* Tamaño personalizado para la foto */
-.custom-photo-size {
-  width: 250px;
-  height: 250px;
-}
-
-/* Asegúrate de que la imagen ocupe todo el espacio del contenedor */
-.custom-photo-size img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
-}
-
-/* Contenedor para la foto y el botón */
-.photo-button-container {
-  position: static;
-  display: inline-block;
-}
-
-/* Estilo para la foto */
-.photo-button-container .custom-photo-size {
-  position: absolute;
-  top: -180px; /* Ajusta la posición vertical de la foto */
-  right: 0; /* Alinea la foto a la derecha */
-  z-index: 1; /* Asegura que la foto esté encima del botón */
-}
-
-/* Estilo para el botón */
-.photo-button-container .button {
-  position: relative;
-  z-index: 2; /* Asegura que el botón esté debajo de la foto */
-  margin-top: 90px; /* Ajusta el espacio para que el botón no se solape con la foto */
-}
-
-.icon {
-  margin-left: 10px; /* Espacio entre el icono y el texto */
-}
-
-.icon i {
-  color: #325a75; /* Color del icono */
-  font-size: 1.2em; /* Tamaño del icono */
+  margin-top: 5px;
 }
 
 /* Estilos para la sección de habilidades */
@@ -158,38 +129,47 @@ footer {
 }
 
 .progress {
-  height: 12px; /* Altura de la barra de progreso */
-  border-radius: 6px; /* Bordes redondeados */
+  height: 12px;
+  border-radius: 6px;
 }
 
+/* Estilos para la foto y el botón */
 .photo-button-container {
   position: relative;
   display: inline-block;
-  width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho */
-}
-
-.photo-button-container {
-  align-items: stretch right; /* Centra la imagen y el botón */
-}
-
-.custom-photo-size img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
-footer p {
-  /*margin: 0; /* Elimina el margen predeterminado */
-  /*white-space: nowrap; /* Evita que el texto se divida en varias líneas */
-  /*overflow: hidden; /* Oculta el texto que se desborda */
-  /*text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
+.photo-button-container .custom-photo-size {
+  position: absolute;
+  top: -180px;
+  width: 250px;
+  height: 250px;
+  right: 0;
+  z-index: 1;
 }
 
-/* styles.css */
+.photo-button-container .button {
+  position: relative;
+  z-index: 2;
+  margin-top: 90px;
+}
+
+.icon {
+  margin-left: 10px;
+}
+
+.icon i {
+  color: #325a75;
+  font-size: 1.2em;
+}
+
+/* Estilos para las barras de progreso */
 progress {
-  width: 100%;
+  width: 100%; /* Ocupa el 100% del ancho */
   height: 20px;
-  appearance: none; /* Elimina el estilo por defecto del navegador */
+  appearance: none;
+  transition: width 1s ease-in-out;
 }
 
 progress::-webkit-progress-bar {
@@ -205,4 +185,12 @@ progress::-webkit-progress-value {
 progress::-moz-progress-bar {
   background-color: #4caf50;
   border-radius: 10px;
+}
+
+.button-navigation {
+  display: flex; /* Activa Flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  margin-top: 2rem; /* Espacio superior */
+  margin-bottom: 2rem; /* Espacio inferior */
 }
