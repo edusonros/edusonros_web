@@ -1,5 +1,5 @@
 /* Estilos generales */
-<!--body {
+body {
   font-family: "Roboto", sans-serif;
   background-image: url("../images/Plano_imagen_fondo.jpg");
   background-size: cover;
@@ -9,17 +9,15 @@
   margin: 0;
   padding: 0;
 }
--->
 
 /* Header */
 .hero {
   background: linear-gradient(135deg, #325a75 0%, #03141d 100%);
   color: #fff;
   padding: 20px 0;
-  /*width: 100%; /* Ocupa el 100% del ancho */
   margin: 0 auto;
-  /*box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
-  width: 1350px;
+  width: 100%;
+  max-width: 1350px; /* Se ajusta en escritorio */
 }
 
 .hero h1,
@@ -28,31 +26,37 @@
   color: #fff;
 }
 
+/* Sección principal */
 .section {
-  width: none;
   padding: 2rem;
+  width: 100%;
 }
 
+/* Columnas flexibles */
 .columns {
   display: flex;
   justify-content: space-between;
-  margin: 0 -10px; /* Ajusta el margen entre columnas */
+  flex-wrap: wrap;
+  margin: 0 -10px;
 }
 
 .column {
   background: #fff;
-  padding: 0 10px; /* Ajusta el padding interno de las columnas */
+  padding: 0 10px;
   border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhanced shadow */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  flex: 1 1 100%;
 }
 
+/* Contenedor principal */
 .container {
-  max-width: none; /* Limita el ancho máximo en pantallas grandes */
+  max-width: 1200px; /* Se ajusta en escritorio */
   margin: 0 auto;
-  padding: 10 20px;
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  padding: 10px 20px;
+  box-sizing: border-box;
 }
 
+/* Estilos de las cajas */
 .box {
   background: #fff;
   padding: 20px;
@@ -66,39 +70,13 @@ footer {
   background: #325a75;
   color: #fff;
   padding: 20px 0;
-  width: 1350px; /* Ocupa el 100% del ancho */
+  width: 100%;
   text-align: center;
-  /*box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
-  margin: 20px auto; /* Ajusta el margen del header */
+  max-width: 1350px; /* Se adapta en escritorio */
+  margin: 20px auto;
 }
 
-/* Estilos para móviles */
-@media (max-width: 2304px) {
-  .hero {
-    max-width: none;
-    padding: 10px 10px; /* Ajusta el padding para móviles */
-  }
-
-  .columns {
-    display: flex; /* Asegura que las columnas se muestren en línea */
-    flex-wrap: nowrap; /* Evita que las columnas se apilen */
-    justify-content: flex-start; /* Alinea las columnas al inicio */
-    width: 768px; /* Ancho total de las 3 columnas (768px * 3) */
-    transform-origin: top left; /* Establece el punto de origen para el zoom */
-  }
-
-  .column {
-    width: 768px; /* Ancho fijo para cada columna */
-    margin-right: 0; /* Elimina el margen entre columnas */
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
-  }
-
-  footer {
-    padding: 20px 10px; /* Ajusta el padding para móviles */
-  }
-}
-
-/* Estilos adicionales */
+/* Botones */
 .button {
   background-color: #325a75;
   color: #fff;
@@ -109,6 +87,7 @@ footer {
   color: #fff;
 }
 
+/* Estilos para tablas */
 .table td {
   vertical-align: top;
   padding: 10px;
@@ -118,7 +97,7 @@ footer {
   margin-top: 5px;
 }
 
-/* Estilos para la sección de habilidades */
+/* Sección de habilidades */
 .skills {
   margin-top: 10px;
 }
@@ -137,7 +116,7 @@ footer {
   border-radius: 6px;
 }
 
-/* Estilos para la foto y el botón */
+/* Contenedor de la foto y botón */
 .photo-button-container {
   position: relative;
   display: inline-block;
@@ -159,6 +138,7 @@ footer {
   margin-top: 90px;
 }
 
+/* Estilos para el icono */
 .icon {
   margin-left: 10px;
 }
@@ -170,7 +150,7 @@ footer {
 
 /* Estilos para las barras de progreso */
 progress {
-  width: 100%; /* Ocupa el 100% del ancho */
+  width: 100%;
   height: 20px;
   appearance: none;
   transition: width 1s ease-in-out;
@@ -191,10 +171,73 @@ progress::-moz-progress-bar {
   border-radius: 10px;
 }
 
-.button-navigation {
-  display: flex; /* Activa Flexbox */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  margin-top: 2rem; /* Espacio superior */
-  margin-bottom: 2rem; /* Espacio inferior */
+/* Ajustes responsivos */
+@media (max-width: 1024px) {
+  .hero {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .columns {
+    flex-wrap: wrap; /* Permite que las columnas se apilen */
+    justify-content: center;
+  }
+
+  .column {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .container {
+    max-width: 90%;
+  }
+
+  .box {
+    margin-bottom: 15px;
+  }
+
+  footer {
+    max-width: 100%;
+    padding: 15px;
+  }
+}
+
+/* Ajustes específicos para móviles */
+@media (max-width: 768px) {
+  .hero {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .columns {
+    flex-direction: column;
+  }
+
+  .column {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .container {
+    max-width: 95%;
+  }
+
+  footer {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  /* Botones de navegación */
+  .button-navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .button-navigation .button {
+    width: 90%;
+    margin-bottom: 10px;
+  }
 }
