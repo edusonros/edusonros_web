@@ -1,5 +1,5 @@
 /* Estilos generales */
-body {
+<!--body {
   font-family: "Roboto", sans-serif;
   background-image: url("../images/Plano_imagen_fondo.jpg");
   background-size: cover;
@@ -9,15 +9,17 @@ body {
   margin: 0;
   padding: 0;
 }
+-->
 
 /* Header */
 .hero {
   background: linear-gradient(135deg, #325a75 0%, #03141d 100%);
   color: #fff;
   padding: 20px 0;
-  width: 100%; /* Ocupa el 100% del ancho */
+  /*width: 100%; /* Ocupa el 100% del ancho */
   margin: 0 auto;
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  /*box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  width: 1350px;
 }
 
 .hero h1,
@@ -26,20 +28,22 @@ body {
   color: #fff;
 }
 
+.section {
+  width: none;
+  padding: 2rem;
+}
+
 .columns {
-  display: none;
-  flex-wrap: nowrap; /* Permite que las columnas se apilen en móviles */
+  display: flex;
   justify-content: space-between;
   margin: 0 -10px; /* Ajusta el margen entre columnas */
 }
 
 .column {
   background: #fff;
-  padding: 0 10px;
+  padding: 0 10px; /* Ajusta el padding interno de las columnas */
   border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-  flex: 1 1 100%; /* Ocupa el 100% del ancho en móviles */
-  /*margin-bottom: 20px; /* Espacio entre columnas */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhanced shadow */
 }
 
 .container {
@@ -62,9 +66,9 @@ footer {
   background: #325a75;
   color: #fff;
   padding: 20px 0;
-  width: 100%; /* Ocupa el 100% del ancho */
+  width: 1350px; /* Ocupa el 100% del ancho */
   text-align: center;
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  /*box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
   margin: 20px auto; /* Ajusta el margen del header */
 }
 
