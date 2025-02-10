@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <base href="/Project-0-web/" />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=yes" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
+    <meta name="viewport" content="width=device-width" />
     <title>Curriculum Vitae - Eduardo Sonsona - Alot Metal</title>
 
     <!-- Bulma CSS -->
@@ -50,14 +45,33 @@
   <body>
     <header class="hero">
       <div class="hero-body">
-        <h1 class="title is-2 has-text-lefted">Eduardo Sonsona Rosinach</h1>
-        <h2 class="subtitle has-text-lefted">Ingeniero Técnico Industrial</h2>
+        <div class="container">
+          <h1 class="title is-2 has-text-lefted">Eduardo Sonsona Rosinach</h1>
+          <h2 class="subtitle has-text-left">
+            <strong class="has-text-white">Ingeniero Técnico Industrial</strong
+            ><br /><br />
+            Apasionado por la tecnología y el diseño.
+          </h2>
+          <div class="has-text-right">
+            <!-- Contenedor para la foto y el botón -->
+            <div class="photo-button-container">
+              <!-- Foto en círculo -->
+              <figure class="image custom-photo-size">
+                <img
+                  class="is-rounded"
+                  src="../images/mi_foto.png"
+                  alt="Eduardo Sonsona Rosinach"
+                />
+              </figure>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
     <main class="section">
       <div class="container">
-        <div class="column is-full-desktop is-half-mobile">
+        <div class="column is-full">
           <div class="box">
             <table class="table is-fullwidth">
               <tr>
@@ -68,7 +82,7 @@
                 <td>
                   <figure class="image is-128x128">
                     <img
-                      src="empresas/logo_alot_metal.png"
+                      src="../empresas/logo_alot_metal.png"
                       alt="Logo de ALOT METAL"
                     />
                   </figure>
