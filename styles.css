@@ -18,7 +18,7 @@
   padding: 20px 0;
   /*width: 100%; /* Ocupa el 100% del ancho */
   margin: 0 auto;
-  /*box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
   width: 1350px;
 }
 
@@ -29,13 +29,14 @@
 }
 
 .section {
-  width: none;
+  width: 100%;
   padding: 2rem;
 }
 
 .columns {
-  display: flex;
+  display: none;
   justify-content: space-between;
+  flex-wrap: nowrap;
   margin: 0 -10px; /* Ajusta el margen entre columnas */
 }
 
@@ -44,6 +45,7 @@
   padding: 0 10px; /* Ajusta el padding interno de las columnas */
   border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhanced shadow */
+  flex: 1 1 100%;
 }
 
 .container {
@@ -83,7 +85,7 @@ footer {
     display: flex; /* Asegura que las columnas se muestren en línea */
     flex-wrap: nowrap; /* Evita que las columnas se apilen */
     justify-content: flex-start; /* Alinea las columnas al inicio */
-    width: 768px; /* Ancho total de las 3 columnas (768px * 3) */
+    width: none; /* Ancho total de las 3 columnas (768px * 3) */
     transform-origin: top left; /* Establece el punto de origen para el zoom */
   }
 
