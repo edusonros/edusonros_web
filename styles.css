@@ -186,3 +186,11 @@ progress::-moz-progress-bar {
   background-color: #4caf50;
   border-radius: 10px;
 }
+
+.button-navigation {
+  display: flex; /* Activa Flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  margin-top: 2rem; /* Espacio superior */
+  margin-bottom: 2rem; /* Espacio inferior */
+}
