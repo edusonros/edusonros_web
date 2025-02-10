@@ -77,6 +77,12 @@ footer {
 /* Estilos para móviles */
 @media (max-width: 2304px) {
   .hero {
+    background: linear-gradient(135deg, #325a75 0%, #03141d 100%);
+    color: #fff;
+    padding: 20px 0;
+    /*width: 100%; /* Ocupa el 100% del ancho */
+    margin: 0 auto;
+    box-sizing: border-box;
     max-width: none;
     padding: 10px 10px; /* Ajusta el padding para móviles */
   }
