@@ -72,7 +72,7 @@ footer {
 @media (max-width: 2304px) {
   .hero {
     width: max;
-    /*padding: 10px 10px; /* Ajusta el padding para móviles */
+    padding: 10px 10px; /* Ajusta el padding para móviles */
   }
 
   .columns {
