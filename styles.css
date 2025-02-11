@@ -228,3 +228,8 @@ footer {
   margin-top: 2rem; /* Espacio superior */
   margin-bottom: 2rem; /* Espacio inferior */
 }
+
+.button-navigation .buttons {
+  display: inline-flex;
+  gap: 10px; /* Space between buttons */
+}
