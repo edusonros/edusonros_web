@@ -182,26 +182,43 @@ footer {
 }
 
 /* Estilos para las barras de progreso */
-progress {
-  width: 100%; /* Ocupa el 100% del ancho */
+.skills {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.progress-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.skill-name {
+  width: 120px;
+  font-weight: bold;
+}
+
+.progress-container {
+  width: 100%;
+  background: #ddd;
   height: 20px;
-  appearance: none;
-  transition: width 1s ease-in-out;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-progress::-webkit-progress-bar {
-  background-color: #f3f3f3;
-  border-radius: 10px;
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #4caf50, #2e7d32);
+  transition: width 1.5s ease-in-out;
 }
 
-progress::-webkit-progress-value {
-  background-color: #4caf50;
-  border-radius: 10px;
-}
-
-progress::-moz-progress-bar {
-  background-color: #4caf50;
-  border-radius: 10px;
+.progress-label {
+  width: 40px;
+  text-align: right;
+  font-weight: bold;
 }
 
 .button-navigation {
