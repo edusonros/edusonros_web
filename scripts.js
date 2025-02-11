@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (buttonText === "Atrás") {
         window.history.back();
       } else if (buttonText === "Página Principal") {
-        window.location.href = "../index.html";
+        window.location.href =  "index.html";
       } else if (buttonText === "Siguiente") {
         navegarSiguiente();
       }
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function navegarSiguiente() {
     if (listaPaginas.length === 0) {
       // Si no estamos en una lista válida, redirigir a la página principal
-      window.location.href = "../index.html";
+      window.location.href =  "index.html";
       return;
     }
 
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (indiceActual === -1 || indiceActual === listaPaginas.length - 1) {
       // Si es la última página o no está en la lista, redirigir a la página principal
-      window.location.href = "../index.html";
+      window.location.href =  "index.html";
       return;
     }
 
