@@ -10,73 +10,77 @@ document.addEventListener("DOMContentLoaded", () => {
       if (buttonText === "Atrás") {
         window.history.back();
       } else if (buttonText === "Página Principal") {
-        window.location.href =  "index.html";
+        window.location.href = "index.html";
       } else if (buttonText === "Siguiente") {
         navegarSiguiente();
       }
     });
   });
 
-  // Listas de páginas
+  // Listas de páginas con sus rutas correctas
   const empresas = [
-    "alot-metal.html",
-    "lacor-textil.html",
-    "Carbotainer.html",
-    "Arasaf.html",
-    "apo.html",
-    "alcamo.html",
-    "hijansa.html",
-    "caf.html"
+    "empresas/alot-metal.html",
+    "empresas/lacor-textil.html",
+    "empresas/Carbotainer.html",
+    "empresas/Arasaf.html",
+    "empresas/apo.html",
+    "empresas/alcamo.html",
+    "empresas/hijansa.html",
+    "empresas/caf.html"
   ];
 
   const cursos = [
-    "AutoCAD.html",
-    "SolidWorks.html",
-    "inventor.html",
-    "Tekla.html",
-    "EN1993.html",
-    "CYPE.html",
-    "Lantek.html",
-    "Telematica.html",
-    "web_SQL.html",
-    "Word.html",
-    "ExcelVBA.html",
-    "DOS.html",
-    "Soldadura.html",
-    "BT.html",
-    "AT.html",
-    "Robots.html",
-    "Siemens.html",
-    "Riesgos.html",
-    "Riesgos_2.html",
-    "Perito.html",
-    "Conservacion.html"
+    "cursos/AutoCAD.html",
+    "cursos/SolidWorks.html",
+    "cursos/inventor.html",
+    "cursos/Tekla.html",
+    "cursos/EN1993.html",
+    "cursos/CYPE.html",
+    "cursos/Lantek.html",
+    "cursos/Telematica.html",
+    "cursos/web_SQL.html",
+    "cursos/Word.html",
+    "cursos/ExcelVBA.html",
+    "cursos/DOS.html",
+    "cursos/Soldadura.html",
+    "cursos/BT.html",
+    "cursos/AT.html",
+    "cursos/Robots.html",
+    "cursos/Siemens.html",
+    "cursos/Riesgos.html",
+    "cursos/Riesgos_2.html",
+    "cursos/Perito.html",
+    "cursos/Conservacion.html"
   ];
 
-  // Obtener el nombre del archivo actual (sin ruta)
+  // Obtener el nombre del archivo actual con su carpeta (si tiene)
   const paginaActual = window.location.pathname.split("/").pop();
 
   // Determinar si estamos en una página de empresa o curso
   let listaPaginas = [];
-  if (empresas.includes(paginaActual)) {
+  let carpeta = "";
+
+  if (empresas.some((ruta) => ruta.endsWith(paginaActual))) {
     listaPaginas = empresas;
-  } else if (cursos.includes(paginaActual)) {
+    carpeta = "empresas/";
+  } else if (cursos.some((ruta) => ruta.endsWith(paginaActual))) {
     listaPaginas = cursos;
+    carpeta = "cursos/";
   }
 
   // Función para navegar a la siguiente página
   function navegarSiguiente() {
     if (listaPaginas.length === 0) {
       // Si no estamos en una lista válida, redirigir a la página principal
-      window.location.href =  "index.html";
+      window.location.href = "index.html";
       return;
     }
 
-    const indiceActual = listaPaginas.indexOf(paginaActual);
+    const indiceActual = listaPaginas.findIndex((ruta) => ruta.endsWith(paginaActual));
 
     if (indiceActual === -1 || indiceActual === listaPaginas.length - 1) {
       // Si es la última página o no está en la lista, redirigir a la página principal
-      window.location.href =  "index.html";
+      window.location.href = "index.html";
       return;
     }
 
@@ -85,6 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = siguientePagina;
   }
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const progressBars = document.querySelectorAll(".progress-fill");
