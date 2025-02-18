@@ -153,7 +153,7 @@ footer {
 /* Estilos para la foto y el botón */
 .photo-button-container {
   position: relative;
-  display: inline-block;
+  display: inline-block; /*Valor anterior  inline-block*/
   width: 100%;
 }
 
@@ -163,6 +163,7 @@ footer {
   width: 250px;
   height: 250px;
   right: 0;
+  /*Valor anterior 0*/
   z-index: 1;
 }
 
