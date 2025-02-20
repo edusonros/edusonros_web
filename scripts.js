@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "cursos/EN1993.html",
     "cursos/CYPE.html",
     "cursos/Lantek.html",
-    "cursos/Telematica.html",
+    "cursos/telematica.html",
     "cursos/web_SQL.html",
     "cursos/Word.html",
     "cursos/ExcelVBA.html",
