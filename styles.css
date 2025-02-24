@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 /* Estilos generales */
 body {
   font-family: "Roboto", sans-serif;
@@ -156,7 +158,7 @@ footer {
 }
 
 .photo-button-container .contact-button {
-  all: unset; /* Elimina cualquier estilo heredado */
+  /*all: unset;  Elimina cualquier estilo heredado */
 }
 
 .photo-button-container .contact-button:hover {
@@ -239,15 +241,11 @@ footer {
   color: #fff;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
 .social-icons {
-  all: unset; /* Elimina cualquier estilo heredado */
   display: list-item inline;
 }
 
 .social-icon li {
-  all: unset;
   width: 200px; /* Ancho de los iconos */
   height: 200px; /* Altura de los iconos */
   justify-content: center;
@@ -259,7 +257,6 @@ footer {
 }
 
 .social-icon i {
-  all: unset;
   color: #ffffff; /* Color blanco para los iconos */
   position: relative;
   background: transparent; /* Fondo transparente */
