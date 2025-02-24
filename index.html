@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <base href="https://edusonros.github.io/edusonros_web/" />
+
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      content="width=device-width, initial-scale=0.2, user-scalable=yes"
     />
+
     <meta
       name="keywords"
-      content="Eduardo, Sonsona, Rosinach, Ingeniero, solidworks, autocad, tekla, inventor"
+      content="Eduardo, Sonsona, Rosinach, Ingeniero, solidworks, autocad, tekla, inventor, revit"
     />
     <meta name="description" content="My web page." />
 
@@ -43,21 +46,63 @@
       }
     </style>
   </head>
+
   <body>
     <header class="hero">
-      <section class="hero-body">
+      <section class="hero-body" style="padding: 1rem 3rem">
         <div class="container">
           <h1 class="title is-2 has-text-left">Eduardo Sonsona Rosinach</h1>
           <h2 class="subtitle has-text-left">
             <strong class="has-text-white">Ingeniero Técnico Industrial</strong
             ><br /><br />
             Apasionado por la tecnología y el diseño.
+            <br /><br /><br />
+
+            <!-- Iconos de redes sociales -->
+            <div class="container">
+              <h2 class="social-icons color-is-white">
+                <!-- FACEBOOK -->
+                <a
+                  class="social-icon facebook has-text-white is-size-4"
+                  href="https://www.facebook.com/eduardo.sonsonarosinach"
+                  target="_blank"
+                >
+                  <span><i class="fab fa-facebook-f"></i></span> </a
+                >&nbsp;&nbsp;&nbsp;
+                <!-- INSTAGRAM -->
+                <a
+                  class="social-icon instagram has-text-white is-size-4"
+                  href="https://www.instagram.com/eduardo_son_ros"
+                  target="_blank"
+                >
+                  <span><i class="fab fa-instagram"></i></span> </a
+                >&nbsp;&nbsp;&nbsp;
+                <!-- GITHUB -->
+                <a
+                  class="social-icon github has-text-white is-size-4"
+                  href="https://github.com/edusonros"
+                  target="_blank"
+                >
+                  <span><i class="fab fa-github"></i></span> </a
+                >&nbsp;&nbsp;&nbsp;
+                <!-- LINKEDIN -->
+                <a
+                  class="social-icon linkedin has-text-white is-size-4"
+                  href="https://www.linkedin.com/in/eduardo-angel-sonsona-rosinach-39210747"
+                  target="_blank"
+                >
+                  <span><i class="fab fa-linkedin"></i></span>
+                </a>
+              </h2>
+            </div>
+            <!-- FIN Iconos de redes sociales -->
           </h2>
+
           <div class="has-text-right">
             <!-- Contenedor para la foto y el botón -->
             <div class="photo-button-container">
               <!-- Foto en círculo -->
-              <figure class="image custom-photo-size">
+              <figure class="image custom-photo-size" style="top: -270px">
                 <img
                   class="is-rounded"
                   src="images/mi_foto.png"
@@ -66,7 +111,22 @@
               </figure>
               <!-- Botón "Contáctame" -->
               <a
-                class="button is-light is-medium has-text-right"
+                class="contact-button"
+                style="
+                  background-color: #062341;
+                  color: white;
+                  padding: 10px 20px;
+                  text-decoration: none;
+                  border-radius: 5px;
+                  display: inline-block;
+                  font-size: 16px;
+                  cursor: pointer;
+                  text-align: center;
+                  position: relative;
+                  z-index: 2;
+                  margin-top: -10px;
+                  margin-right: 60px;
+                "
                 href="mailto:edusonros@gmail.com"
                 >Contáctame</a
               >
@@ -104,7 +164,10 @@
               </p>
               <p><strong>Teléfono:</strong> 671281392 / 976357386</p>
               <p><strong>Email:</strong> edusonros@gmail.com</p>
-              <p><strong>Web:</strong> edusonros.com</p>
+              <p>
+                <strong>Web:</strong>
+                https://edusonros.github.io<br />/edusonros_web/
+              </p>
             </div>
             <div class="box">
               <h3 class="title is-4">
@@ -114,163 +177,132 @@
               </h3>
               <div class="skills">
                 <!-- Barras de progreso -->
-                <div class="skill">
-                  <p>AutoCAD</p>
-                  <progress
-                    id="autocadProgress"
-                    class="progress is-primary"
-                    value="100"
-                    max="100"
-                  >
-                    <p>100%</p>
-                  </progress>
+                <div class="progress-bar">
+                  <p class="skill-name">AutoCAD</p>
+                  <div class="progress-container">
+                    <div class="progress-fill" data-value="90"></div>
+                  </div>
+                  <p class="progress-label">90%</p>
                 </div>
-                <div class="skill">
-                  <p>SolidWORKS</p>
-                  <progress
-                    id="solidworksProgress"
-                    class="progress is-primary"
-                    value="90"
-                    max="100"
-                  >
-                    90%
-                  </progress>
+                <div class="progress-bar">
+                  <p class="skill-name">SolidWorks</p>
+                  <div class="progress-container">
+                    <div class="progress-fill" data-value="80"></div>
+                  </div>
+                  <p class="progress-label">80%</p>
                 </div>
-                <div class="skill">
-                  <p>AutoDESK Inventor</p>
-                  <progress
-                    id="autodeskProgress"
-                    class="progress is-primary"
-                    value="60"
-                    max="100"
-                  >
-                    10%
-                  </progress>
+                <div class="progress-bar">
+                  <p class="skill-name">AutoDESK Inventor</p>
+                  <div class="progress-container">
+                    <div class="progress-fill" data-value="70"></div>
+                  </div>
+                  <p class="progress-label">70%</p>
                 </div>
-                <div class="skill">
-                  <p>Lantek EXPERT</p>
-                  <progress
-                    id="lantekProgress"
-                    class="progress is-primary"
-                    value="90"
-                    max="100"
-                  >
-                    90%
-                  </progress>
+                <div class="progress-bar">
+                  <p class="skill-name">Tekla Structures</p>
+                  <div class="progress-container">
+                    <div class="progress-fill" data-value="60"></div>
+                  </div>
+                  <p class="progress-label">60%</p>
                 </div>
-                <div class="skill">
-                  <p>CYPE 3D</p>
-                  <progress
-                    id="cypeProgress"
-                    class="progress is-primary"
-                    value="65"
-                    max="100"
-                  >
-                    65%
-                  </progress>
+                <div class="progress-bar">
+                  <p class="skill-name">CYPE 3D</p>
+                  <div class="progress-container">
+                    <div class="progress-fill" data-value="50"></div>
+                  </div>
+                  <p class="progress-label">50%</p>
                 </div>
-                <div class="skill">
-                  <p>EXCEL</p>
-                  <progress
-                    id="excelProgress"
-                    class="progress is-primary"
-                    value="80"
-                    max="100"
-                  >
-                    80%
-                  </progress>
+                <div class="progress-bar">
+                  <p class="skill-name">Lantek EXPERT</p>
+                  <div class="progress-container">
+                    <div class="progress-fill" data-value="85"></div>
+                  </div>
+                  <p class="progress-label">85%</p>
+                  <!-- 
+                </div>                
+                <div class="progress-bar">
+                  <p class="skill-name">WEB-SQL</p><div class="progress-container">
+                  <div class="progress-fill"
+                    data-value="35">
+                    </div></div><p class="progress-label">35%</p>
+                  
+                </div>  
+                <div class="progress-bar">
+                  <p class="skill-name">WORD</p><div class="progress-container">
+                  <div class="progress-fill"
+                    data-value="90">
+                    </div></div><p class="progress-label">90%</p>
+                  
                 </div>
-                <div class="skill">
-                  <p>PYTHON</p>
-                  <progress
-                    id="pythonProgress"
-                    class="progress is-primary"
-                    value="60"
-                    max="100"
-                  >
-                    60%
-                  </progress>
+                <div class="progress-bar">
+                  <p class="skill-name">EXCEL y VBA</p><div class="progress-container">
+                  <div class="progress-fill"
+                    data-value="90">
+                    </div></div><p class="progress-label">90%</p>
+                
+                      
                 </div>
-                <div class="skill">
-                  <p>HTML</p>
-                  <progress
-                    id="htmlProgress"
-                    class="progress is-primary"
-                    value="90"
-                    max="100"
-                  >
-                    90%
-                  </progress>
+                <div class="progress-bar">
+                  <p class="skill-name">Baja Tensión</p><div class="progress-container">
+                  <div class="progress-fill"
+                    data-value="90">
+                    </div></div><p class="progress-label">90%</p>
+                  
                 </div>
-                <div class="skill">
-                  <p>CSS</p>
-                  <progress
-                    id="cssProgress"
-                    class="progress is-info"
-                    value="85"
-                    max="100"
-                  >
-                    85%
-                  </progress>
+                <div class="progress-bar">
+                  <p class="skill-name">Alta Tensión</p><div class="progress-container">
+                  <div class="progress-fill"
+                    data-value="70">
+                    </div></div><p class="progress-label">70%</p>
+                  
                 </div>
-                <div class="skill">
-                  <p>JavaScript</p>
-                  <progress
-                    id="javascriptProgress"
-                    class="progress is-warning"
-                    value="70"
-                    max="100"
-                  >
-                    70%
-                  </progress>
+                <div class="progress-bar">
+                  <p class="skill-name">PYTHON</p><div class="progress-container">
+                  <div class="progress-fill"
+                    data-value="65">
+                    </div></div><p class="progress-label">65%</p>
+                  
                 </div>
-                <div class="skill">
-                  <p>Bulma Framework</p>
-                  <progress
-                    id="bulmaProgress"
-                    class="progress is-danger"
-                    value="80"
-                    max="100"
-                  >
-                    80%
-                  </progress>
+                <div class="progress-bar">
+                  <p class="skill-name">HTML</p><div class="progress-container">
+                  <div class="progress-fill"
+                    data-value="75">
+                    </div></div><p class="progress-label">75%</p>
+                  
                 </div>
-                <div class="skill">
-                  <p>Android Studio</p>
-                  <progress
-                    id="androidProgress"
-                    class="progress is-primary"
-                    value="60"
-                    max="100"
-                  >
-                    60%
-                  </progress>
+                <div class="progress-bar">
+                  <p class="skill-name">CSS</p><div class="progress-container">
+                  <div class="progress-fill"
+                    data-value="65">
+                    </div></div><p class="progress-label">65%</p>
+                  
                 </div>
-                <div class="skill">
-                  <p>ChatGPT</p>
-                  <progress
-                    id="chatgptProgress"
-                    class="progress is-primary"
-                    value="70"
-                    max="100"
-                  >
-                    70%
-                  </progress>
+                <div class="progress-bar">
+                  <p class="skill-name">JavaScript</p><div class="progress-container">
+                  <div class="progress-fill"
+                    data-value="40">
+                    </div></div><p class="progress-label">40%</p>
+                  
                 </div>
-                <div class="skill">
-                  <p>Tekla Structures</p>
-                  <progress
-                    id="teklaProgress"
-                    class="progress is-primary"
-                    value="50"
-                    max="100"
-                  >
-                    50%
-                  </progress>
+                <div class="progress-bar">
+                  <p class="skill-name">Android Studio</p>
+                  <div class="progress-container">
+                  <div class="progress-fill"
+                    data-value="50">
+                    </div></div><p class="progress-label">50%</p>                  
+                    -->
+                </div>
+                <div class="progress-bar">
+                  <p class="skill-name">Ofimatica</p>
+                  <div class="progress-container">
+                    <div class="progress-fill" data-value="90"></div>
+                  </div>
+                  <p class="progress-label">90%</p>
                 </div>
               </div>
             </div>
           </div>
+
           <!-- Columna Central -->
           <div class="column is-one-third">
             <h3 class="title is-4" padding="15px">
@@ -282,22 +314,29 @@
               <h4 class="title is-5">ALOT METAL S.L.</h4>
               <p>Responsable de Ingeniería y Oficina Técnica</p>
               <p><em>Octubre 2018 – Diciembre 2024</em></p>
-              <a href="empresas/alot-metal.html" class="button is-small"
-                >Ver más detalles</a
-              >
+              <br />
+              <div class="is-flex is-justify-content-space-between">
+                <a href="empresas/alot-metal.html" class="button is-small"
+                  >Ver más detalles y Proyectos realizados</a
+                >
+              </div>
             </div>
+
             <div class="box">
               <h4 class="title is-5">LACOR TEXTIL</h4>
               <p>Jefe de Producción</p>
               <p><em>Enero 2018 – Junio 2018</em></p>
+              <br />
               <a href="empresas/lacor-textil.html" class="button is-small"
                 >Ver más detalles</a
               >
             </div>
+
             <div class="box">
               <h4 class="title is-5">CARBOTAINER S.A.</h4>
               <p>Encargado de Turno de Producción</p>
               <p><em>Mayo 2017 – Noviembre 2017</em></p>
+              <br />
               <a href="empresas/Carbotainer.html" class="button is-small"
                 >Ver más detalles</a
               >
@@ -306,59 +345,84 @@
               <h4 class="title is-5">ARASAF S.L.</h4>
               <p>Ingeniero de Producción</p>
               <p><em>Abril 2015 – Febrero 2017</em></p>
+              <br />
               <a href="empresas/Arasaf.html" class="button is-small"
                 >Ver más detalles</a
               >
             </div>
+
             <div class="box">
               <h4 class="title is-5">
                 APO S.L. (Aragonesa de Proyectos y Obras)
               </h4>
               <p>Técnico en Oficina Técnica</p>
-              <p><em>Marzo 2010– Febrero 2012</em></p>
-              <a href="empresas/APO.html" class="button is-small"
-                >Ver más detalles</a
-              >
+              <p><em>Marzo 2010 – Febrero 2012</em></p>
+              <br />
+              <div class="is-flex is-justify-content-space-between">
+                <a href="empresas/apo.html" class="button is-small"
+                  >Ver más detalles y Proyecto realizado</a
+                >
+              </div>
             </div>
+
             <div class="box">
               <h4 class="title is-5">ALCAMO S.L.</h4>
               <p>Director Técnico Produccion</p>
               <p>Director Técnico Comercial</p>
               <p><em>Abril 2002 – Diciembre 2009</em></p>
-              <a href="empresas/Alcamo.html" class="button is-small"
-                >Ver más detalles</a
-              >
+              <br />
+              <div class="is-flex is-justify-content-space-between">
+                <a href="empresas/alcamo.html" class="button is-small"
+                  >Ver más detalles y Proyectos realizados.</a
+                >
+              </div>
             </div>
+
             <div class="box">
               <h4 class="title is-5">HIJANSA S.A.</h4>
               <p>Director Técnico Produccion</p>
               <p>Director Técnico Comercial</p>
               <p><em>Abril 1996 – Marzo 2002</em></p>
-              <a href="empresas/Hijansa.html" class="button is-small"
-                >Ver más detalles</a
-              >
+              <br />
+              <div class="is-flex is-justify-content-space-between">
+                <a href="empresas/Hijansa.html" class="button is-small"
+                  >Ver más detalles</a
+                >
+                <a
+                  href="empresas/proyectos_Hijansa.html"
+                  class="button is-small"
+                  >Proyectos</a
+                >
+              </div>
             </div>
             <div class="box">
               <h4 class="title is-5">CAF S.A.</h4>
               <p>Ingeniero Técnico en Prácticas</p>
               <p><em>Octubre 1995 – Marco 1996</em></p>
+              <br />
               <a href="empresas/CAF.html" class="button is-small"
                 >Ver más detalles</a
               >
             </div>
           </div>
+
           <!-- Columna Derecha -->
           <div class="column is-one-third">
+            <h3 class="title is-4">
+              <br />
+              Cursos
+              <span class="icon">
+                <i class="fas fa-book"></i>
+              </span>
+            </h3>
+
+            <!-- CAD y Diseño Gráfico -->
             <div class="box">
-              <h3 class="title is-4">
-                Cursos<span class="icon">
-                  <i class="fas fa-book"></i>
-                </span>
-              </h3>
+              <h4 class="title is-5">CAD y Diseño Gráfico</h4>
               <table class="table is-fullwidth">
                 <tbody>
                   <tr>
-                    <td colspan="2">AutoCAD (300 h.)</td>
+                    <td colspan="2">AutoCAD <br />(300 h.)</td>
                     <td class="has-text-right">
                       <a href="cursos/AutoCAD.html" class="button is-small"
                         >Detalles</a
@@ -366,15 +430,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td colspan="2">Autodesk INVENTOR (150 h.)</td>
-                    <td class="has-text-right">
-                      <a href="cursos/inventor.html" class="button is-small"
-                        >Detalles</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="2">SolidWorks (300 h.)</td>
+                    <td colspan="2">SolidWorks <br />(300 h.)</td>
                     <td class="has-text-right">
                       <a href="cursos/Solidworks.html" class="button is-small"
                         >Detalles</a
@@ -382,26 +438,37 @@
                     </td>
                   </tr>
                   <tr>
-                    <td colspan="2">Lantek EXPERT(300 h.)</td>
+                    <td colspan="2">Autodesk INVENTOR <br />(150 h.)</td>
                     <td class="has-text-right">
-                      <a href="cursos/Lantek.html" class="button is-small"
+                      <a href="cursos/inventor.html" class="button is-small"
                         >Detalles</a
                       >
                     </td>
                   </tr>
-                  <tr>
-                    <td colspan="2">Simbología en planos soldadura (80 h.)</td>
-                    <td class="has-text-right">
-                      <a href="cursos/Soldadura.html" class="button is-small"
-                        >Detalles</a
-                      >
-                    </td>
-                  </tr>
+                </tbody>
+              </table>
+            </div>
 
+            <!-- Estructura Metálica -->
+            <div class="box">
+              <h4 class="title is-5">Estructuras Metálicas</h4>
+              <table class="table is-fullwidth">
+                <tbody>
+                  <!-- Cursos relacionados con Estructura Metálica -->
                   <tr>
                     <td colspan="2">
-                      Diseño y Cálculo de Estructuras de Acero según EN1993 (150
-                      h.)
+                      Diseño de Estructuras de Acero con Tekla <br />(40 h.)
+                    </td>
+                    <td class="has-text-left">
+                      <a href="cursos/Tekla.html" class="button is-small"
+                        >Detalles</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      Diseño y Cálculo de Estructuras de Acero según EN1993
+                      <br />(150 h.)
                     </td>
                     <td class="has-text-left">
                       <a href="cursos/EN1993.html" class="button is-small"
@@ -412,7 +479,7 @@
                   <tr>
                     <td colspan="2">
                       Diseño y Cálculo Estructuras Metálicas con CYPE Metal 3D
-                      (80 h.)
+                      <br />(80 h.)
                     </td>
                     <td class="has-text-left">
                       <a href="cursos/CYPE.html" class="button is-small"
@@ -420,18 +487,112 @@
                       >
                     </td>
                   </tr>
+                </tbody>
+              </table>
+            </div>
 
+            <!-- Programas Corte Chapa -->
+            <div class="box">
+              <h4 class="title is-5">
+                Corte Chapa en Laser, Plasma y Oxicorte.
+              </h4>
+              <table class="table is-fullwidth">
+                <tbody>
+                  <!-- Aquí irán los cursos -->
                   <tr>
-                    <td colspan="2">
-                      Fundamentos para el diseño de Estructuras de Acero con
-                      Tekla (40 h.)
-                    </td>
-                    <td class="has-text-left">
-                      <a href="cursos/Tekla.html" class="button is-small"
+                    <td colspan="2">Lantek EXPERT<br />(300 h.)</td>
+                    <td class="has-text-right">
+                      <a href="cursos/Lantek.html" class="button is-small"
                         >Detalles</a
                       >
                     </td>
                   </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Ofimática e Informatica -->
+            <div class="box">
+              <h4 class="title is-5">Ofimática</h4>
+              <table class="table is-fullwidth">
+                <tbody>
+                  <!-- Aquí irán los cursos de Word, Excel, etc. -->
+                  <tr>
+                    <td colspan="2">Telematica en la empresa (300h h.)</td>
+                    <td class="has-text-right">
+                      <a href="cursos/Word.html" class="button is-small"
+                        >Detalles</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Programacion WEB y SQL (40h h.)</td>
+                    <td class="has-text-right">
+                      <a href="cursos/web_SQL.html" class="button is-small"
+                        >Detalles</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Microsoft Word (40h h.)</td>
+                    <td class="has-text-right">
+                      <a href="cursos/Word.html" class="button is-small"
+                        >Detalles</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Microsoft Excel y VBA (40 h.)</td>
+                    <td class="has-text-right">
+                      <a href="cursos/Excel.html" class="button is-small"
+                        >Detalles</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Lenguajes tipo DOS (40 h.)</td>
+                    <td class="has-text-right">
+                      <a href="cursos/DOS.html" class="button is-small"
+                        >Detalles</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Robots y Automatas -->
+            <div class="box">
+              <h4 class="title is-5">Robots y Automatas</h4>
+              <table class="table is-fullwidth">
+                <tbody>
+                  <tr>
+                    <td colspan="2">Curso Programacion Robots ABB (150 h.)</td>
+                    <td class="has-text-left">
+                      <a href="cursos/Robots.html" class="button is-small"
+                        >Detalles</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      Curso Programacion Automatas Programables (150 h.)
+                    </td>
+                    <td class="has-text-left">
+                      <a href="cursos/Siemens.html" class="button is-small"
+                        >Detalles</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Electricidad -->
+            <div class="box">
+              <h4 class="title is-5">Electricidad</h4>
+              <table class="table is-fullwidth">
+                <tbody>
                   <tr>
                     <td colspan="2">
                       Montaje y Mantenimiento Instalaciones BT (80 h.)
@@ -444,8 +605,8 @@
                   </tr>
                   <tr>
                     <td colspan="2">
-                      Diseño, Montaje y Mantenimiento de Líneas Eléctricas AT
-                      (80 h.)
+                      Diseño y Cálculo de Instalaciones Electricas de Alta
+                      Tensión (80 h.)
                     </td>
                     <td class="has-text-left">
                       <a href="cursos/AT.html" class="button is-small"
@@ -453,67 +614,119 @@
                       >
                     </td>
                   </tr>
-                  <tr>
-                    <td colspan="2">Excel VBA Macros (80 h.)</td>
-                    <td class="has-text-right">
-                      <a href="cursos/ExcelVBA.html" class="button is-small"
-                        >Detalles</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="2">Word (40 h.)</td>
-                    <td class="has-text-right">
-                      <a href="cursos/Word.html" class="button is-small"
-                        >Detalles</a
-                      >
-                    </td>
-                  </tr>
-                  <tr></tr>
+                </tbody>
+              </table>
+            </div>
 
+            <!-- Lenguajes de Programación -->
+            <div class="box">
+              <h4 class="title is-5">Lenguajes de Programación</h4>
+              <table class="table is-fullwidth">
+                <tbody>
                   <tr>
-                    <td colspan="2">Prevención de Riesgos Laborales (30 h.)</td>
-                    <td class="has-text-left">
+                    <td colspan="2">PYTHON (80 h.)</td>
+                    <td class="has-text-right">
+                      <a href="cursos/Python.html" class="button is-small"
+                        >Detalles</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">HTML (80 h.)</td>
+                    <td class="has-text-right">
+                      <a href="cursos/HTML.html" class="button is-small"
+                        >Detalles</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">CSS (100 h.)</td>
+                    <td class="has-text-right">
+                      <a href="cursos/CSS.html" class="button is-small"
+                        >Detalles</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">JavaScript (100 h.)</td>
+                    <td class="has-text-right">
+                      <a href="cursos/JavaScript.html" class="button is-small"
+                        >Detalles</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Riesgos Laborables -->
+            <div class="box">
+              <h4 class="title is-5">Prevencion Riesgos Laborables</h4>
+              <table class="table is-fullwidth">
+                <tbody>
+                  <tr>
+                    <td>
+                      <p style="text-align: left">
+                        Nivel Basico de Prevencion en la Construccion <br />(60
+                        h.)
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right">
                       <a href="cursos/Riesgos.html" class="button is-small"
                         >Detalles</a
                       >
                     </td>
                   </tr>
                   <tr>
-                    <td colspan="2">
-                      Programación de Robots de Soldadura ABB (320 h.)
+                    <td>
+                      <p style="text-align: left">
+                        Nivel Avanzado de Prevencion en la Construccion <br />(8
+                        h.)
+                      </p>
                     </td>
-                    <td class="has-text-left">
-                      <a href="cursos/Robots.html" class="button is-small"
+                  </tr>
+                  <tr>
+                    <td align="right">
+                      <a href="cursos/Riesgos_2.html" class="button is-small"
                         >Detalles</a
                       >
                     </td>
                   </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Otros Cursos -->
+            <div class="box">
+              <h4 class="title is-5">Otros Cursos</h4>
+              <table class="table is-fullwidth">
+                <tbody>
                   <tr>
-                    <td colspan="2">
-                      Programación Autómatas Programables (80 h.)
-                    </td>
-                    <td class="has-text-left">
-                      <a href="cursos/Siemens.html" class="button is-small"
-                        >Detalles</a
-                      >
+                    <td>
+                      <p style="text-align: left">
+                        Curso Mantenimiento de Materiales de Via <br />(80 h.)
+                      </p>
                     </td>
                   </tr>
                   <tr>
-                    <td colspan="2">
-                      Jefe Conservación y Explotación (300 h.)
-                    </td>
-                    <td class="has-text-left">
+                    <td align="right">
                       <a href="cursos/Conservacion.html" class="button is-small"
                         >Detalles</a
                       >
                     </td>
                   </tr>
                   <tr>
-                    <td colspan="2">
-                      Périto Judicial Tasación de Vehículos (150 h.)
+                    <td>
+                      <p style="text-align: left">
+                        Curso Perito Tasador de Vehiculos <br />(80 h.)
+                      </p>
                     </td>
-                    <td class="has-text-left">
+                  </tr>
+
+                  <tr>
+                    <td align="right">
                       <a href="cursos/Perito.html" class="button is-small"
                         >Detalles</a
                       >
@@ -530,6 +743,7 @@
     <footer>
       <p>&copy; 2024 Eduardo Sonsona Rosinach - Curriculum Vitae</p>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="scripts.js"></script>
   </body>
 </html>
