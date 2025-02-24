@@ -132,6 +132,25 @@ footer {
   margin-top: 5px;
 }
 
+/* Estilos para la sección de habilidades */
+.skills {
+  margin-top: 10px;
+}
+
+.skill {
+  margin-bottom: 15px;
+}
+
+.skill p {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.progress {
+  height: 12px;
+  border-radius: 6px;
+}
+
 /* Estilos para la foto y el botón */
 .photo-button-container {
   position: relative;
@@ -141,7 +160,7 @@ footer {
 
 .photo-button-container .custom-photo-size {
   position: absolute;
-  top: -180px;
+  top: -250px;
   width: 250px;
   height: 250px;
   right: 0;
@@ -221,22 +240,9 @@ footer {
   margin-bottom: 2rem; /* Espacio inferior */
 }
 
-.buttons-navigation {
-  /* Define estilos para los botones de navegación */
-  background-color: #325a75;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-}
-
-.buttons-navigation:hover {
-  background-color: #2a4760;
-  color: #fff;
+.button-navigation .buttons {
+  display: flex;
+  gap: 10px;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
