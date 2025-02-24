@@ -1,24 +1,18 @@
-/* Estilos generales */
-body {
-  font-family: "Roboto", sans-serif;
-  background-image: url("images/Plano_imagen_fondo.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: #333;
-  margin: 0;
-  padding: 0;
-}
-
-/* Header */
 .hero {
   background: linear-gradient(135deg, #325a75 0%, #03141d 100%);
-  color: #fff;
+  color: #fff; /* Ensure white header text */
   padding: 20px 0;
-  /*width: 100%; /* Ocupa el 100% del ancho */
   margin: 0 auto;
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
   width: 1350px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    width: 768px;
+  }
+  .columns {
+    width: 100%; /* Ocupar todo el ancho en móviles */
+  }
 }
 
 .hero h1,
@@ -28,15 +22,12 @@ body {
 }
 
 .section {
-  padding: 1em 3em;
-  /*width: 100%;*/
-  /*padding: 2rem;*/
+  padding: 2rem;
 }
 
 .columns {
-  display: none;
+  display: flex;
   justify-content: space-between;
-  flex-wrap: nowrap;
   margin: 0 -10px; /* Ajusta el margen entre columnas */
 }
 
@@ -45,74 +36,15 @@ body {
   padding: 0 10px; /* Ajusta el padding interno de las columnas */
   border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhanced shadow */
-  flex: 1 1 100%;
-}
-
-.container {
-  max-width: none; /* Limita el ancho máximo en pantallas grandes */
-  margin: 0 auto;
-  padding: 10 20px;
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
 }
 
 .box {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
-  margin-bottom: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px; /* Espacio entre las cajas */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhanced shadow */
 }
-
-/* Footer */
-footer {
-  background: #325a75;
-  color: #fff;
-  padding: 20px 0;
-  width: 1350px; /* Ocupa el 100% del ancho */
-  text-align: center;
-  /*box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
-  margin: 20px auto; /* Ajusta el margen del header */
-}
-
-/* Estilos para móviles */
-@media (max-width: 1400px) {
-  body {
-    overflow-x: auto;
-  }
-
-  .hero {
-    background: linear-gradient(135deg, #325a75 0%, #03141d 100%);
-    color: #fff;
-    padding: 20px 0;
-    /*width: 100%; /* Ocupa el 100% del ancho */
-    margin: 0 auto;
-    box-sizing: border-box;
-    max-width: none;
-    /*padding: 10px 10px;  Ajusta el padding para móviles */
-  }
-
-  .columns {
-    display: flex; /* Asegura que las columnas se muestren en línea */
-    flex-wrap: nowrap; /* Evita que las columnas se apilen */
-    /*justify-content: flex-start; /* Alinea las columnas al inicio */
-    /*width: none; /* Ancho total de las 3 columnas (768px * 3) */
-    /*transform-origin: top left; /* Establece el punto de origen para el zoom */
-    overflow-x: auto;
-  }
-
-  .column {
-    /*min-width: 300px;*/
-    width: 768px; /* Ancho fijo para cada columna */
-    /*margin-right: 0; /* Elimina el margen entre columnas */
-    /*box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
-  }
-
-  footer {
-    padding: 20px 10px; /* Ajusta el padding para móviles */
-  }
-}
-
-/* Estilos adicionales */
 .button {
   background-color: #325a75;
   color: #fff;
@@ -123,13 +55,91 @@ footer {
   color: #fff;
 }
 
+footer {
+  background: #325a75;
+  color: #fff;
+  padding: 20px 0;
+  margin: 0 auto;
+  width: 1350px;
+  text-align: center;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+  footer {
+    width: 768px;
+    flex-shrink: 0; /* Evita que el footer se achique */
+  }
+}
+
+.container {
+  max-width: 1200px; /* Limita el ancho máximo en pantallas grandes */
+  margin: 0 auto;
+  padding: 0 20px; /* Añade un poco de padding para que el contenido no toque los bordes */
+}
+
 .table td {
-  vertical-align: top;
-  padding: 10px;
+  vertical-align: top; /* Ensures proper alignment of text and button */
+  padding: 10px; /* Optional spacing */
 }
 
 .table td .has-text-right {
-  margin-top: 5px;
+  margin-top: 5px; /* Adds space between the text and button when wrapping */
+}
+
+.btn-atras,
+.btn-principal,
+.btn-siguiente {
+  background-color: #4caf50; /* Verde */
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/* Tamaño personalizado para la foto */
+.custom-photo-size {
+  width: 250px;
+  height: 250px;
+}
+
+/* Asegúrate de que la imagen ocupe todo el espacio del contenedor */
+.custom-photo-size img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
+}
+
+/* Contenedor para la foto y el botón */
+.photo-button-container {
+  position: static;
+  display: inline-block;
+}
+
+/* Estilo para la foto */
+.photo-button-container .custom-photo-size {
+  position: absolute;
+  top: -180px; /* Ajusta la posición vertical de la foto */
+  right: 0; /* Alinea la foto a la derecha */
+  z-index: 1; /* Asegura que la foto esté encima del botón */
+}
+
+/* Estilo para el botón */
+.photo-button-container .button {
+  position: relative;
+  z-index: 2; /* Asegura que el botón esté debajo de la foto */
+  margin-top: 90px; /* Ajusta el espacio para que el botón no se solape con la foto */
+}
+
+.icon {
+  margin-left: 10px; /* Espacio entre el icono y el texto */
+}
+
+.icon i {
+  color: #325a75; /* Color del icono */
+  font-size: 1.2em; /* Tamaño del icono */
 }
 
 /* Estilos para la sección de habilidades */
@@ -147,142 +157,51 @@ footer {
 }
 
 .progress {
-  height: 12px;
-  border-radius: 6px;
+  height: 12px; /* Altura de la barra de progreso */
+  border-radius: 6px; /* Bordes redondeados */
 }
 
-/* Estilos para la foto y el botón */
 .photo-button-container {
   position: relative;
-  display: flex;
+  display: inline-block;
+  width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho */
+}
+
+.photo-button-container {
+  align-items: stretch right; /* Centra la imagen y el botón */
+}
+
+.custom-photo-size img {
   width: 100%;
-}
-
-.photo-button-container .custom-photo-size {
-  position: absolute;
-  top: -250px;
-  width: 250px;
-  height: 250px;
-  right: 0;
-  /*Valor anterior 0*/
-  z-index: 1;
-}
-
-.photo-button-container .button {
-  position: relative;
-  z-index: 2;
-  margin-top: 90px;
-}
-
-.photo-button-container .contact-button {
-  all: unset; /* Elimina cualquier estilo heredado */
-}
-
-.photo-button-container .contact-button:hover {
-  background-color: #2a4760;
-  color: #fff;
-}
-
-.icon {
-  margin-left: 10px;
-}
-
-.icon i {
-  color: #325a75;
-  font-size: 1.2em;
-}
-
-/* Estilos para las barras de progreso */
-.skills {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.progress-bar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 10px 0;
-}
-
-.skill-name {
-  width: 120px;
-  font-weight: bold;
-}
-
-.progress-container {
-  width: 100%;
-  background: #ddd;
-  height: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.progress-fill {
   height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, #4caf50, #2e7d32);
-  transition: width 1.5s ease-in-out;
+  object-fit: cover;
 }
 
-.progress-label {
-  width: 40px;
-  text-align: right;
-  font-weight: bold;
+footer p {
+  /*margin: 0; /* Elimina el margen predeterminado */
+  /*white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  /*overflow: hidden; /* Oculta el texto que se desborda */
+  /*text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
 }
 
-.button-navigation {
-  display: flex; /* Activa Flexbox */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  margin-top: 2rem; /* Espacio superior */
-  margin-bottom: 2rem; /* Espacio inferior */
+/* styles.css */
+progress {
+  width: 100%;
+  height: 20px;
+  appearance: none; /* Elimina el estilo por defecto del navegador */
 }
 
-.button-navigation .buttons {
-  display: flex;
-  gap: 10px;
+progress::-webkit-progress-bar {
+  background-color: #f3f3f3;
+  border-radius: 10px;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
-.social-icons {
-  all: unset; /* Elimina cualquier estilo heredado */
-  display: list-item inline;
+progress::-webkit-progress-value {
+  background-color: #4caf50;
+  border-radius: 10px;
 }
 
-.social-icon li {
-  all: unset;
-  width: 200px; /* Ancho de los iconos */
-  height: 200px; /* Altura de los iconos */
-  justify-content: center;
-  align-items: center;
-  background-color: #062341; /* Color de fondo opcional */
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-}
-
-.social-icon i {
-  all: unset;
-  color: #ffffff; /* Color blanco para los iconos */
-  position: relative;
-  background: transparent; /* Fondo transparente */
-  border-radius: 50%;
-  padding: 20px; /* Aumenta el padding para hacer los iconos más grandes */
-  margin: 10px;
-  width: 60px; /* Aumenta el ancho para hacer los iconos más grandes */
-  height: 60px; /* Aumenta la altura para hacer los iconos más grandes */
-  font-size: 48px; /* Aumenta el tamaño de la fuente para hacer los iconos más grandes */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.social-icon:hover i {
-  color: #1877f2; /* Cambia el color al pasar el ratón (puedes ajustar este color) */
+progress::-moz-progress-bar {
+  background-color: #4caf50;
+  border-radius: 10px;
 }
