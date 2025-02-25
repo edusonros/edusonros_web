@@ -41,66 +41,6 @@ body {
   overflow: hidden;
 }
 
-/* 🔹 Fondo glitch sin imagen */
-.glitch-bg {
-  background: black; /* Fondo base */
-  position: relative;
-  width: 100%;
-  height: 300px; /* Ajusta según el tamaño que quieras */
-  overflow: hidden;
-}
-
-/* 🔹 Capas de glitch */
-.glitch-bg::before,
-.glitch-bg::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #2a2a2a, #000); /* Reemplazo de imagen */
-  mix-blend-mode: screen;
-}
-
-/* Capa de glitch rojo */
-.glitch-bg::before {
-  animation: glitchEffect 0.5s infinite alternate;
-  transform: translate(-2px, -2px);
-  filter: hue-rotate(180deg);
-  opacity: 0.7;
-}
-
-/* Capa de glitch azul */
-.glitch-bg::after {
-  animation: glitchEffect 0.7s infinite alternate-reverse;
-  transform: translate(2px, 2px);
-  filter: hue-rotate(300deg);
-  opacity: 0.7;
-}
-
-/* 🔹 Animación de glitch */
-@keyframes glitchEffect {
-  0% {
-    transform: translate(0, 0);
-  }
-  20% {
-    transform: translate(-3px, -3px);
-  }
-  40% {
-    transform: translate(3px, 3px);
-  }
-  60% {
-    transform: translate(-3px, 3px);
-  }
-  80% {
-    transform: translate(3px, -3px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
 .hero h1,
 .hero h2 {
   margin: 0;
@@ -368,3 +308,55 @@ footer {
 }
 
 /*test-glitch*/
+.glitch-test {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  background: red;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.glitch-test::before,
+.glitch-test::after {
+  content: "PRUEBA GLITCH";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: black;
+  mix-blend-mode: difference;
+}
+
+.glitch-test::before {
+  animation: glitchEffect 0.5s infinite alternate;
+  transform: translate(-2px, -2px);
+}
+
+.glitch-test::after {
+  animation: glitchEffect 0.7s infinite alternate-reverse;
+  transform: translate(2px, 2px);
+}
+
+@keyframes glitchEffect {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-3px, 3px);
+  }
+  50% {
+    transform: translate(3px, -3px);
+  }
+  75% {
+    transform: translate(-3px, 3px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
