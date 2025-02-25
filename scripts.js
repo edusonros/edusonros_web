@@ -178,6 +178,47 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const canvas = document.getElementById("matrixCanvas");
+  const ctx = canvas.getContext("2d");
+
+  // Ajustar el tamaño del canvas
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const fontSize = 16;
+  const columns = Math.floor(canvas.width / fontSize); // Cantidad de columnas
+  const drops = Array(columns).fill(1); // Posición inicial de cada columna
+
+  function drawMatrix() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; // Hace que las letras se desvanezcan
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#0F0"; // Color verde Matrix
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters.charAt(Math.floor(Math.random() * letters.length));
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+
+  setInterval(drawMatrix, 50);
+
+  // Ajustar el tamaño del canvas cuando se cambia el tamaño de la ventana
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+});
+
+
 
 // Función para ajustar el zoom de la página
 function adjustZoom() {

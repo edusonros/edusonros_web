@@ -30,15 +30,27 @@ body {
   overflow: hidden; /* Add this line 
 }*/
 
-/* hero ocn glitch*/
 .hero {
   position: relative;
-  color: #fff;
-  padding: 20px 0;
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
   overflow: hidden;
+  background: black; /* Fondo oscuro para el efecto */
+}
+
+#matrixCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
 }
 
 .hero h1,
@@ -305,58 +317,4 @@ footer {
 
 .social-icon:hover i {
   color: #1877f2; /* Cambia el color al pasar el ratón (puedes ajustar este color) */
-}
-
-/*test-glitch*/
-.glitch-test {
-  font-size: 3rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-align: center;
-  color: white;
-  background: red;
-  padding: 20px;
-  position: relative;
-  overflow: hidden;
-}
-
-.glitch-test::before,
-.glitch-test::after {
-  content: "PRUEBA GLITCH";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: white;
-  background: black;
-  mix-blend-mode: difference;
-}
-
-.glitch-test::before {
-  animation: glitchEffect 0.5s infinite alternate;
-  transform: translate(-2px, -2px);
-}
-
-.glitch-test::after {
-  animation: glitchEffect 0.7s infinite alternate-reverse;
-  transform: translate(2px, 2px);
-}
-
-@keyframes glitchEffect {
-  0% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(-3px, 3px);
-  }
-  50% {
-    transform: translate(3px, -3px);
-  }
-  75% {
-    transform: translate(-3px, 3px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
 }
