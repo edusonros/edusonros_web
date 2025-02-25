@@ -91,26 +91,33 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const progressBars = document.querySelectorAll(".progress-fill");
 
   function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
-    return rect.top < window.innerHeight && rect.bottom > 0;
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
   }
 
   function animateProgressBars() {
     progressBars.forEach((bar) => {
-      if (isElementInViewport(bar) && !bar.classList.contains("animated")) {
-        bar.classList.add("animated");
-        const targetValue = bar.getAttribute("data-value");
-        bar.style.width = `${targetValue}%`;
+      if (isElementInViewport(bar)) {
+        const value = bar.getAttribute("data-value");
+        bar.style.width = value + "%";
       }
     });
   }
 
   window.addEventListener("scroll", animateProgressBars);
-  animateProgressBars(); // Ejecutar al cargar por si ya es visible
+  window.addEventListener("resize", animateProgressBars);
+
+  // Initial check
+  animateProgressBars();
 });
 
 
