@@ -1,4 +1,5 @@
 
+// efecto de desencriptar el nombre
 document.addEventListener('DOMContentLoaded', function () {
   console.log("Script cargado correctamente");
 
@@ -13,6 +14,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const originalText = element.textContent;
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/';
     let currentIndex = 0;
+
+    // Ocultar el texto antes de iniciar
+    element.textContent = "";
+    element.style.visibility = "visible"; 
 
     function decryptText() {
       if (currentIndex < originalText.length) {
@@ -33,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    setTimeout(decryptText, 500 + index * 500); // Agrega un pequeño delay entre elementos
+    setTimeout(decryptText, 500 + index * 500); // Pequeño retraso antes de empezar
   });
 });
 

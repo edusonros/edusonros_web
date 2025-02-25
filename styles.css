@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
+.decrypt-text {
+  visibility: hidden;
+}
+
 /* Estilos generales */
 body {
   font-family: "Roboto", sans-serif;
@@ -277,3 +281,5 @@ footer {
 .social-icon:hover i {
   color: #1877f2; /* Cambia el color al pasar el ratón (puedes ajustar este color) */
 }
+
+
