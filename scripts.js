@@ -53,20 +53,21 @@ document.addEventListener('DOMContentLoaded', function () {
   // 🔹 FUNCIÓN PARA DETENER EL EFECTO MATRIX
   function stopMatrixEffect() {
     console.log("Finalizando efecto Matrix...");
-
+  
     // 1️⃣ Detiene la animación Matrix
     clearInterval(matrixInterval);
-
+  
     // 2️⃣ Hace un fade-out del canvas
     const canvas = document.getElementById("matrixCanvas");
-    canvas.style.transition = "opacity 1.5s ease-in-out";
+    canvas.style.transition = "opacity 2.5s ease-in-out"; 
     canvas.style.opacity = "0";
-
+  
     // 3️⃣ Aplica el fondo degradado azul después del fade-out
     setTimeout(() => {
       document.querySelector(".hero").classList.add("gradient-bg");
-    }, 1500);
+    }, 1000);
   }
+  
 
   // 🔹 NAVEGACIÓN ENTRE PÁGINAS (BOTONES)
   const buttons = document.querySelectorAll(".button.is-link");
