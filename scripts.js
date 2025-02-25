@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
       nameElement.textContent = scrambledText;
       currentIndex++;
 
-      setTimeout(decryptText, 800); // Ajusta la velocidad aquí
+      setTimeout(decryptText, 80); // Ajusta la velocidad aquí
     } else {
       nameElement.textContent = originalText;
     }
