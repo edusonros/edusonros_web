@@ -17,33 +17,26 @@ body {
   padding: 0;
 }
 
-/* hero sin glitch-
-.hero {
-  background: linear-gradient(135deg, #325a75 0%, #03141d 100%);
-  color: #fff;
-  padding: 20px 0;
-  /*width: 100%; 
-  margin: 0 auto;
-  box-sizing: border-box; 
-  width: 1350px;
-  position: relative; 
-  overflow: hidden; /* Add this line 
-}*/
-
 .hero {
   position: relative;
   overflow: hidden;
-  background: black; /* Fondo oscuro para el efecto */
+  background: black; /* Color base del fondo */
+  max-width: 1200px; /* 📌 Ajusta esto al tamaño que tenía antes */
+  margin: 0 auto; /* 📌 Centra el header en la página */
+  padding: 50px 20px; /* 📌 Mantiene el espaciado interno */
+  border-radius: 10px; /* 📌 Opcional: Bordes redondeados */
 }
 
+/* 🔹 Asegura que el canvas no expanda el header */
 #matrixCanvas {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100%; /* 📌 Ahora ocupa solo el tamaño del header */
+  height: 100%; /* 📌 Solo dentro del header */
   z-index: 0;
   pointer-events: none;
+  border-radius: inherit; /* 📌 Si el header tiene bordes redondeados, los hereda */
 }
 
 .hero-content {
@@ -52,6 +45,7 @@ body {
   color: white;
   text-align: center;
 }
+
 
 .hero h1,
 .hero h2 {
@@ -112,27 +106,16 @@ footer {
     overflow-x: auto;
   }
 
-  /* hero ocn glitch*/
   .hero {
-    position: relative;
+    background: linear-gradient(135deg, #325a75 0%, #03141d 100%);
     color: #fff;
     padding: 20px 0;
-    width: 100%;
+    width: 100%;  
     margin: 0 auto;
     box-sizing: border-box;
-    overflow: hidden;
+    max-width: 1152px;
+    padding: 10px 10px;  Ajusta el padding para móviles
   }
-
-  /*.hero {
-    /*background: linear-gradient(135deg, #325a75 0%, #03141d 100%);*
-    color: #fff;
-    padding: 20px 0;
-    /*width: 100%; /* Ocupa el 100% del ancho 
-    margin: 0 auto;
-    box-sizing: border-box;
-    max-width: none;
-    /*padding: 10px 10px;  Ajusta el padding para móviles
-  }*/
 
   .columns {
     display: flex; /* Asegura que las columnas se muestren en línea */

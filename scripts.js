@@ -1,25 +1,17 @@
-
-// efecto de desencriptar el nombre
 document.addEventListener('DOMContentLoaded', function () {
   console.log("Script cargado correctamente");
 
+  // 🔹 EFECTO DESENCRIPTADO (Decrypted Text)
   const elements = document.querySelectorAll('.decrypt-text');
-
-  if (elements.length === 0) {
-    console.log("No se encontraron elementos con la clase 'decrypt-text'");
-    return;
-  }
 
   elements.forEach((element, index) => {
     const originalText = element.textContent;
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/';
-    let currentIndex = 0;
 
-    // 1️⃣ Ocultar el texto completamente
-    element.style.opacity = "0";
+    let currentIndex = 0;
+    element.style.opacity = "0"; // Inicialmente oculto
     element.textContent = "";
 
-    // 2️⃣ Después de 500ms, mostrarlo encriptado
     setTimeout(() => {
       element.style.opacity = "1"; // Hace visible el texto
 
@@ -27,10 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
         .split('')
         .map(() => characters[Math.floor(Math.random() * characters.length)])
         .join('');
-
       element.textContent = scrambledText;
 
-      // 3️⃣ Iniciar el desencriptado tras 1 segundo
       setTimeout(() => {
         function decryptText() {
           if (currentIndex < originalText.length) {
@@ -43,24 +33,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
             element.textContent = tempText;
             currentIndex++;
-
             setTimeout(decryptText, 100); // Ajusta la velocidad aquí
           } else {
             element.textContent = originalText;
-            console.log(`Efecto completado en: ${originalText}`);
           }
         }
-
         decryptText();
-      }, 1000); // Esperar 1s antes de empezar a descifrar
-
-    }, 500 + index * 300); // Retraso entre elementos para un efecto escalonado
+      }, 1000);
+    }, 500 + index * 300);
   });
-});
 
-
-// Lógica para la navegación de los botones
-document.addEventListener("DOMContentLoaded", () => {
+  // 🔹 NAVEGACIÓN ENTRE PÁGINAS
   const buttons = document.querySelectorAll(".button.is-link");
   console.log("Botones encontrados:", buttons);
 
@@ -78,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Listas de páginas con sus rutas correctas
   const empresas = [
     "empresas/alot-metal.html",
     "empresas/lacor-textil.html",
@@ -114,10 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "cursos/Conservacion.html"
   ];
 
-  // Obtener el nombre del archivo actual con su carpeta (si tiene)
   const paginaActual = window.location.pathname.split("/").pop();
-
-  // Determinar si estamos en una página de empresa o curso
   let listaPaginas = [];
   let carpeta = "";
 
@@ -129,10 +108,8 @@ document.addEventListener("DOMContentLoaded", () => {
     carpeta = "cursos/";
   }
 
-  // Función para navegar a la siguiente página
   function navegarSiguiente() {
     if (listaPaginas.length === 0) {
-      // Si no estamos en una lista válida, redirigir a la página principal
       window.location.href = "index.html";
       return;
     }
@@ -140,59 +117,34 @@ document.addEventListener("DOMContentLoaded", () => {
     const indiceActual = listaPaginas.findIndex((ruta) => ruta.endsWith(paginaActual));
 
     if (indiceActual === -1 || indiceActual === listaPaginas.length - 1) {
-      // Si es la última página o no está en la lista, redirigir a la página principal
       window.location.href = "index.html";
       return;
     }
 
-    // Navegar a la siguiente página
     const siguientePagina = listaPaginas[indiceActual + 1];
     window.location.href = siguientePagina;
   }
-});
 
-// Codigo Barras de Progreso
-document.addEventListener("DOMContentLoaded", () => {
-  const progressBars = document.querySelectorAll(".progress-fill");
-
-  function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return rect.top < window.innerHeight && rect.bottom > 0;
-  }
-  function animateProgressBars() {
-    console.log("Animating progress bars");
-    progressBars.forEach((bar) => {
-      console.log("Checking bar:", bar);
-      if (isElementInViewport(bar) && !bar.classList.contains("animated")) {
-        console.log("Animating bar:", bar);
-        bar.classList.add("animated");
-        const targetValue = bar.getAttribute("data-value");
-        bar.style.width = `${targetValue}%`;
-      }
-    });
-  }
-
-  window.addEventListener("scroll", animateProgressBars);
-  window.addEventListener("resize", animateProgressBars);
-  animateProgressBars(); // Ejecutar al cargar por si ya es visible
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
+  // 🔹 EFECTO MATRIX EN EL HEADER
   const canvas = document.getElementById("matrixCanvas");
   const ctx = canvas.getContext("2d");
 
-  // Ajustar el tamaño del canvas
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  function resizeCanvas() {
+    const hero = document.querySelector(".hero");
+    canvas.width = hero.clientWidth; // Ajusta al ancho del header
+    canvas.height = hero.clientHeight; // Ajusta a la altura del header
+  }
+
+  resizeCanvas();
+  window.addEventListener("resize", resizeCanvas);
 
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   const fontSize = 16;
-  const columns = Math.floor(canvas.width / fontSize); // Cantidad de columnas
-  const drops = Array(columns).fill(1); // Posición inicial de cada columna
+  const columns = Math.floor(canvas.width / fontSize);
+  const drops = Array(columns).fill(1);
 
   function drawMatrix() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; // Hace que las letras se desvanezcan
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = "#0F0"; // Color verde Matrix
@@ -211,22 +163,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setInterval(drawMatrix, 50);
 
-  // Ajustar el tamaño del canvas cuando se cambia el tamaño de la ventana
-  window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
+  // 🔹 PROGRESO DE BARRAS ANIMADAS
+  const progressBars = document.querySelectorAll(".progress-fill");
+
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
+  }
+
+  function animateProgressBars() {
+    progressBars.forEach((bar) => {
+      if (isElementInViewport(bar) && !bar.classList.contains("animated")) {
+        bar.classList.add("animated");
+        const targetValue = bar.getAttribute("data-value");
+        bar.style.width = `${targetValue}%`;
+      }
+    });
+  }
+
+  window.addEventListener("scroll", animateProgressBars);
+  window.addEventListener("resize", animateProgressBars);
+  animateProgressBars();
 });
 
-
-
-// Función para ajustar el zoom de la página
+// 🔹 AJUSTE DE ZOOM PARA PANTALLAS PEQUEÑAS
 function adjustZoom() {
-  const screenWidth = window.innerWidth; // Ancho de la pantalla
-  const totalColumnsWidth = 2304; // Ancho total de las 3 columnas (768px * 3)
-  const zoomLevel = screenWidth / totalColumnsWidth; // Calcula el nivel de zoom necesario
+  const screenWidth = window.innerWidth;
+  const totalColumnsWidth = 2304;
+  const zoomLevel = screenWidth / totalColumnsWidth;
 
-  // Aplica el zoom a la página
   document.body.style.zoom = zoomLevel;
 }
-
