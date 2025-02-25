@@ -1,31 +1,40 @@
 
 document.addEventListener('DOMContentLoaded', function () {
-  const nameElement = document.getElementById('nombre');
-  if (!nameElement) return; // Verifica si el elemento existe
+  console.log("Script cargado correctamente");
 
-  const originalText = nameElement.textContent;
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/';
-  let currentIndex = 0;
+  const elements = document.querySelectorAll('.decrypt-text');
 
-  function decryptText() {
-    if (currentIndex < originalText.length) {
-      let scrambledText = originalText
-        .split('')
-        .map((char, index) =>
-          index < currentIndex ? char : characters[Math.floor(Math.random() * characters.length)]
-        )
-        .join('');
-
-      nameElement.textContent = scrambledText;
-      currentIndex++;
-
-      setTimeout(decryptText, 80); // Ajusta la velocidad aquí
-    } else {
-      nameElement.textContent = originalText;
-    }
+  if (elements.length === 0) {
+    console.log("No se encontraron elementos con la clase 'decrypt-text'");
+    return;
   }
 
-  setTimeout(decryptText, 500); // Pequeña pausa antes de empezar
+  elements.forEach((element, index) => {
+    const originalText = element.textContent;
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/';
+    let currentIndex = 0;
+
+    function decryptText() {
+      if (currentIndex < originalText.length) {
+        let scrambledText = originalText
+          .split('')
+          .map((char, i) =>
+            i < currentIndex ? char : characters[Math.floor(Math.random() * characters.length)]
+          )
+          .join('');
+
+        element.textContent = scrambledText;
+        currentIndex++;
+
+        setTimeout(decryptText, 80); // Ajusta la velocidad aquí
+      } else {
+        element.textContent = originalText;
+        console.log(`Efecto completado en: ${originalText}`);
+      }
+    }
+
+    setTimeout(decryptText, 500 + index * 500); // Agrega un pequeño delay entre elementos
+  });
 });
 
 
