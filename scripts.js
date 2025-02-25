@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
             element.textContent = tempText;
             currentIndex++;
 
-            setTimeout(decryptText, 80); // Ajusta la velocidad aquí
+            setTimeout(decryptText, 100); // Ajusta la velocidad aquí
           } else {
             element.textContent = originalText;
             console.log(`Efecto completado en: ${originalText}`);
@@ -151,6 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// Codigo Barras de Progreso
 document.addEventListener("DOMContentLoaded", () => {
   const progressBars = document.querySelectorAll(".progress-fill");
 

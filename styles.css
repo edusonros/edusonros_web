@@ -283,4 +283,21 @@ footer {
   color: #1877f2; /* Cambia el color al pasar el ratón (puedes ajustar este color) */
 }
 
+/*test-glitch*/
+
+@keyframes glitch {
+  0% { background-position: 0% 0%; }
+  25% { background-position: 5% -5%; }
+  50% { background-position: -5% 5%; }
+  75% { background-position: 5% 5%; }
+  100% { background-position: -5% -5%; }
+}
+
+.glitch-bg {
+  background: url("images/Plano_imagen_fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: glitch 0.5s infinite alternate;
+}
 
