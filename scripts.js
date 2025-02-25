@@ -1,3 +1,35 @@
+
+document.addEventListener('DOMContentLoaded', function () {
+  const nameElement = document.getElementById('nombre');
+  if (!nameElement) return; // Verifica si el elemento existe
+
+  const originalText = nameElement.textContent;
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/';
+  let currentIndex = 0;
+
+  function decryptText() {
+    if (currentIndex < originalText.length) {
+      let scrambledText = originalText
+        .split('')
+        .map((char, index) =>
+          index < currentIndex ? char : characters[Math.floor(Math.random() * characters.length)]
+        )
+        .join('');
+
+      nameElement.textContent = scrambledText;
+      currentIndex++;
+
+      setTimeout(decryptText, 800); // Ajusta la velocidad aquí
+    } else {
+      nameElement.textContent = originalText;
+    }
+  }
+
+  setTimeout(decryptText, 500); // Pequeña pausa antes de empezar
+});
+
+
+
 // Lógica para la navegación de los botones
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".button.is-link");
@@ -126,3 +158,4 @@ function adjustZoom() {
   // Aplica el zoom a la página
   document.body.style.zoom = zoomLevel;
 }
+
