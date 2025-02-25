@@ -15,33 +15,48 @@ document.addEventListener('DOMContentLoaded', function () {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/';
     let currentIndex = 0;
 
-    // Ocultar el texto antes de iniciar
+    // 1️⃣ Ocultar el texto completamente
+    element.style.opacity = "0";
     element.textContent = "";
-    element.style.visibility = "visible"; 
 
-    function decryptText() {
-      if (currentIndex < originalText.length) {
-        let scrambledText = originalText
-          .split('')
-          .map((char, i) =>
-            i < currentIndex ? char : characters[Math.floor(Math.random() * characters.length)]
-          )
-          .join('');
+    // 2️⃣ Después de 500ms, mostrarlo encriptado
+    setTimeout(() => {
+      element.style.opacity = "1"; // Hace visible el texto
 
-        element.textContent = scrambledText;
-        currentIndex++;
+      let scrambledText = originalText
+        .split('')
+        .map(() => characters[Math.floor(Math.random() * characters.length)])
+        .join('');
 
-        setTimeout(decryptText, 80); // Ajusta la velocidad aquí
-      } else {
-        element.textContent = originalText;
-        console.log(`Efecto completado en: ${originalText}`);
-      }
-    }
+      element.textContent = scrambledText;
 
-    setTimeout(decryptText, 500 + index * 500); // Pequeño retraso antes de empezar
+      // 3️⃣ Iniciar el desencriptado tras 1 segundo
+      setTimeout(() => {
+        function decryptText() {
+          if (currentIndex < originalText.length) {
+            let tempText = originalText
+              .split('')
+              .map((char, i) =>
+                i < currentIndex ? char : characters[Math.floor(Math.random() * characters.length)]
+              )
+              .join('');
+
+            element.textContent = tempText;
+            currentIndex++;
+
+            setTimeout(decryptText, 80); // Ajusta la velocidad aquí
+          } else {
+            element.textContent = originalText;
+            console.log(`Efecto completado en: ${originalText}`);
+          }
+        }
+
+        decryptText();
+      }, 1000); // Esperar 1s antes de empezar a descifrar
+
+    }, 500 + index * 300); // Retraso entre elementos para un efecto escalonado
   });
 });
-
 
 
 // Lógica para la navegación de los botones

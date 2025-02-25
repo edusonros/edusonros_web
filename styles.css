@@ -2,6 +2,7 @@
 
 .decrypt-text {
   visibility: hidden;
+  opacity: 0; /* Inicialmente invisible */
 }
 
 /* Estilos generales */
