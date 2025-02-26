@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 .decrypt-text {
-  opacity: 0; /* Inicialmente invisible */
+  opacity: 1 !important; /* 🔹 Asegurar que el texto siempre se vea */
   position: relative;
-  z-index: 2; /* 📌 Asegura que esté encima del canvas */
-  transition: opacity 1s ease-in-out;
+  z-index: 3; /* 🔹 Asegurar que esté encima del efecto Matrix */
+  transition: opacity 1.5s ease-in-out; /* 🔹 Transición suave */
 }
+
 
 /* Estilos generales */
 body {

@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const elements = document.querySelectorAll('.decrypt-text');
   let textsDecrypted = 0;
 
+  // 🔹 Asegurar que el texto sea visible desde el inicio
+  elements.forEach((element) => {
+    element.style.opacity = "1";  // 🔹 Mostrar el texto desde el inicio
+    element.style.zIndex = "3";   // 🔹 Asegurar que esté por encima del efecto Matrix
+  });
+
   elements.forEach((element, index) => {
     const originalText = element.textContent;
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/';
