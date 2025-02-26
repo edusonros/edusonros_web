@@ -17,24 +17,15 @@ body {
   padding: 0;
 }
 
-/* 🔹 Estado inicial con el efecto Matrix */
 .hero {
   position: relative;
   overflow: hidden;
   background: black; /* Color base del fondo */
-  max-width: 1350px; /* 📌 Ajusta esto al tamaño que tenía antes */
+  max-width: 1200px; /* 📌 Ajusta esto al tamaño que tenía antes */
   margin: 0 auto; /* 📌 Centra el header en la página */
   padding: 50px 20px; /* 📌 Mantiene el espaciado interno */
   border-radius: 10px; /* 📌 Opcional: Bordes redondeados */
-  transition: background 2s ease-in-out; /* Transición suave */
 }
-
-
-/* 🔹 Fondo degradado azul (cuando termina el Matrix) */
-.hero.gradient-bg {
-  background: linear-gradient(135deg, #325a75 0%, #03141d 100%);
-}
-
 
 /* 🔹 Asegura que el canvas no expanda el header */
 #matrixCanvas {

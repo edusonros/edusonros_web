@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 🔹 EFECTO DESENCRIPTADO (Decrypted Text)
   const elements = document.querySelectorAll('.decrypt-text');
-  let textsDecrypted = 0; // Contador para saber cuándo termina todo el descifrado
 
   elements.forEach((element, index) => {
     const originalText = element.textContent;
@@ -34,15 +33,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             element.textContent = tempText;
             currentIndex++;
-            setTimeout(decryptText, 100);
+            setTimeout(decryptText, 100); // Ajusta la velocidad aquí
           } else {
             element.textContent = originalText;
-            textsDecrypted++;
-
-            // 🚀 Si todos los textos se han descifrado, finaliza el efecto Matrix
-            if (textsDecrypted === elements.length) {
-              stopMatrixEffect();
-            }
           }
         }
         decryptText();
@@ -50,26 +43,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 500 + index * 300);
   });
 
-  // 🔹 FUNCIÓN PARA DETENER EL EFECTO MATRIX
-  function stopMatrixEffect() {
-    console.log("Finalizando efecto Matrix...");
-
-    // 1️⃣ Detiene la animación Matrix
-    clearInterval(matrixInterval);
-
-    // 2️⃣ Hace un fade-out del canvas
-    const canvas = document.getElementById("matrixCanvas");
-    canvas.style.transition = "opacity 1.5s ease-in-out";
-    canvas.style.opacity = "0";
-
-    // 3️⃣ Aplica el fondo degradado azul después del fade-out
-    setTimeout(() => {
-      document.querySelector(".hero").classList.add("gradient-bg");
-    }, 1500);
-  }
-
-  // 🔹 NAVEGACIÓN ENTRE PÁGINAS (BOTONES)
+  // 🔹 NAVEGACIÓN ENTRE PÁGINAS
   const buttons = document.querySelectorAll(".button.is-link");
+  console.log("Botones encontrados:", buttons);
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -85,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // 🔹 LISTA DE PÁGINAS PARA NAVEGACIÓN
   const empresas = [
     "empresas/alot-metal.html",
     "empresas/lacor-textil.html",
@@ -123,11 +98,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const paginaActual = window.location.pathname.split("/").pop();
   let listaPaginas = [];
+  let carpeta = "";
 
   if (empresas.some((ruta) => ruta.endsWith(paginaActual))) {
     listaPaginas = empresas;
+    carpeta = "empresas/";
   } else if (cursos.some((ruta) => ruta.endsWith(paginaActual))) {
     listaPaginas = cursos;
+    carpeta = "cursos/";
   }
 
   function navegarSiguiente() {
@@ -153,8 +131,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function resizeCanvas() {
     const hero = document.querySelector(".hero");
-    canvas.width = hero.clientWidth;
-    canvas.height = hero.clientHeight;
+    canvas.width = hero.clientWidth; // Ajusta al ancho del header
+    canvas.height = hero.clientHeight; // Ajusta a la altura del header
   }
 
   resizeCanvas();
@@ -164,8 +142,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const fontSize = 16;
   const columns = Math.floor(canvas.width / fontSize);
   const drops = Array(columns).fill(1);
-
-  let matrixInterval = setInterval(drawMatrix, 50);
 
   function drawMatrix() {
     ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
@@ -184,6 +160,8 @@ document.addEventListener('DOMContentLoaded', function () {
       drops[i]++;
     }
   }
+
+  setInterval(drawMatrix, 50);
 
   // 🔹 PROGRESO DE BARRAS ANIMADAS
   const progressBars = document.querySelectorAll(".progress-fill");
