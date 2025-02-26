@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 .decrypt-text {
-  /*visibility: hidden;*/
-  opacity: 0; /* Inicialmente invisible */
+  opacity: 1 !important; /* 🔹 Asegurar que el texto siempre se vea */
+  position: relative;
+  z-index: 3; /* 🔹 Asegurar que esté encima del efecto Matrix */
+  transition: opacity 1.5s ease-in-out; /* 🔹 Transición suave */
 }
+
 
 /* Estilos generales */
 body {
@@ -42,7 +45,7 @@ body {
   background: black;
   opacity: 1;
   transition: opacity 3s ease-in-out;
-  z-index: 1;
+  z-index: 0; /* 📌 Reducido para que no bloquee el texto */
 }
 
 /* 🔹 Cuando finaliza el Matrix, la capa negra desaparece gradualmente */
@@ -50,18 +53,15 @@ body {
   opacity: 0;
 }
 
-
-
-/* 🔹 Asegura que el canvas no expanda el header */
+/* 🔹 Asegura que el canvas no bloquee el texto */
 #matrixCanvas {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* 📌 Ahora ocupa solo el tamaño del header */
-  height: 100%; /* 📌 Solo dentro del header */
-  z-index: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* 📌 Debajo del texto */
   pointer-events: none;
-  border-radius: inherit; /* 📌 Si el header tiene bordes redondeados, los hereda */
 }
 
 .hero-content {
