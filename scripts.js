@@ -33,15 +33,70 @@ document.addEventListener('DOMContentLoaded', function () {
 
             element.textContent = tempText;
             currentIndex++;
-            setTimeout(decryptText, 100); // Ajusta la velocidad aquí
+            setTimeout(decryptText, 100);
           } else {
             element.textContent = originalText;
+            stopMatrixEffect(); // 🚀 Finaliza el efecto Matrix al terminar la animación del texto
           }
         }
         decryptText();
       }, 1000);
     }, 500 + index * 300);
   });
+
+  // 🔹 FUNCIÓN PARA DETENER EL EFECTO MATRIX
+  function stopMatrixEffect() {
+    console.log("Finalizando efecto Matrix...");
+  
+    // 1️⃣ Desvanece el efecto Matrix suavemente
+    const canvas = document.getElementById("matrixCanvas");
+    canvas.style.transition = "opacity 2.5s ease-in-out";
+    canvas.style.opacity = "0";
+
+    // 2️⃣ Mantiene el fondo degradado sin cambios bruscos
+    setTimeout(() => {
+      document.querySelector(".hero").classList.add("gradient-bg");
+      canvas.remove(); // 🔹 Elimina el canvas después de desvanecerse
+    }, 2500);
+  }
+
+  // 🔹 EFECTO MATRIX EN EL HEADER
+  const canvas = document.getElementById("matrixCanvas");
+  const ctx = canvas.getContext("2d");
+
+  function resizeCanvas() {
+    const hero = document.querySelector(".hero");
+    canvas.width = hero.clientWidth;
+    canvas.height = hero.clientHeight;
+  }
+
+  resizeCanvas();
+  window.addEventListener("resize", resizeCanvas);
+
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const fontSize = 16;
+  const columns = Math.floor(canvas.width / fontSize);
+  const drops = Array(columns).fill(1);
+
+  let matrixInterval = setInterval(drawMatrix, 50); // 🔹 Guardamos el intervalo para detenerlo después
+
+  function drawMatrix() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#0F0"; // Color verde Matrix
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters.charAt(Math.floor(Math.random() * letters.length));
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
 
   // 🔹 NAVEGACIÓN ENTRE PÁGINAS
   const buttons = document.querySelectorAll(".button.is-link");
@@ -98,14 +153,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const paginaActual = window.location.pathname.split("/").pop();
   let listaPaginas = [];
-  let carpeta = "";
 
   if (empresas.some((ruta) => ruta.endsWith(paginaActual))) {
     listaPaginas = empresas;
-    carpeta = "empresas/";
   } else if (cursos.some((ruta) => ruta.endsWith(paginaActual))) {
     listaPaginas = cursos;
-    carpeta = "cursos/";
   }
 
   function navegarSiguiente() {
@@ -124,44 +176,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const siguientePagina = listaPaginas[indiceActual + 1];
     window.location.href = siguientePagina;
   }
-
-  // 🔹 EFECTO MATRIX EN EL HEADER
-  const canvas = document.getElementById("matrixCanvas");
-  const ctx = canvas.getContext("2d");
-
-  function resizeCanvas() {
-    const hero = document.querySelector(".hero");
-    canvas.width = hero.clientWidth; // Ajusta al ancho del header
-    canvas.height = hero.clientHeight; // Ajusta a la altura del header
-  }
-
-  resizeCanvas();
-  window.addEventListener("resize", resizeCanvas);
-
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  const fontSize = 16;
-  const columns = Math.floor(canvas.width / fontSize);
-  const drops = Array(columns).fill(1);
-
-  function drawMatrix() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.fillStyle = "#0F0"; // Color verde Matrix
-    ctx.font = fontSize + "px monospace";
-
-    for (let i = 0; i < drops.length; i++) {
-      const text = letters.charAt(Math.floor(Math.random() * letters.length));
-      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-        drops[i] = 0;
-      }
-      drops[i]++;
-    }
-  }
-
-  setInterval(drawMatrix, 50);
 
   // 🔹 PROGRESO DE BARRAS ANIMADAS
   const progressBars = document.querySelectorAll(".progress-fill");
