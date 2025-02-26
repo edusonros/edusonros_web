@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 🔹 EFECTO DESENCRIPTADO (Decrypted Text)
   const elements = document.querySelectorAll('.decrypt-text');
+  let textsDecrypted = 0; // Contador para verificar cuándo termina el último texto
 
   elements.forEach((element, index) => {
     const originalText = element.textContent;
@@ -36,7 +37,12 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(decryptText, 100);
           } else {
             element.textContent = originalText;
-            stopMatrixEffect(); // 🚀 Finaliza el efecto Matrix al terminar la animación del texto
+            textsDecrypted++; // 📌 Aumentamos el contador de textos desencriptados
+
+            // 📌 Si todos los textos han sido desencriptados, detenemos el efecto Matrix
+            if (textsDecrypted === elements.length) {
+              stopMatrixEffect();
+            }
           }
         }
         decryptText();
@@ -47,6 +53,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // 🔹 FUNCIÓN PARA DETENER EL EFECTO MATRIX
   function stopMatrixEffect() {
     console.log("Finalizando efecto Matrix...");
+
+    // 1️⃣ Detener la animación Matrix
+    clearInterval(matrixInterval);
   
     // 1️⃣ Desvanece el efecto Matrix suavemente
     const canvas = document.getElementById("matrixCanvas");
