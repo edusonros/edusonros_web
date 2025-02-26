@@ -20,11 +20,13 @@ body {
 .hero {
   position: relative;
   overflow: hidden;
-  background: black; /* Color base del fondo */
+  background: linear-gradient(135deg, #1b3a57 0%, #02121b 100%); /* 🔹 Fondo degradado desde el inicio */
   max-width: 1200px; /* 📌 Ajusta esto al tamaño que tenía antes */
   margin: 0 auto; /* 📌 Centra el header en la página */
   padding: 50px 20px; /* 📌 Mantiene el espaciado interno */
   border-radius: 10px; /* 📌 Opcional: Bordes redondeados */
+  transition: background 3s ease-in-out; /* 🔹 Suaviza el cambio */
+
 }
 
 /* 🔹 Asegura que el canvas no expanda el header */
@@ -36,7 +38,13 @@ body {
   height: 100%; /* 📌 Solo dentro del header */
   z-index: 0;
   pointer-events: none;
-  border-radius: inherit; /* 📌 Si el header tiene bordes redondeados, los hereda */
+  background: linear-gradient(135deg, #1b3a57 0%, #02121b 100%); /* 🔹 Mantiene el degradado */
+  opacity: 0.8; /* 🔹 Hace que las letras sean más visibles */
+}
+
+/* 🔹 Para suavizar la transición cuando desaparece el efecto Matrix */
+.hero.gradient-bg {
+  background: linear-gradient(135deg, #1b3a57 0%, #02121b 100%);
 }
 
 .hero-content {
